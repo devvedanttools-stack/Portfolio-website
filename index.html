@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
@@ -6,9 +6,27 @@
 <meta name="color-scheme" content="light dark">
 <title>Devesh S. — Global Healthcare Cybersecurity &amp; AI Infrastructure Leader</title>
 <meta name="description" content="Devesh S. — AI systems secure by architecture, not by patch. Cisco Worldwide Cloud &amp; AI Infrastructure Sales leader, applying an architecture-first security thesis to healthcare AI.">
+
+<!-- Social sharing (GitHub Pages friendly) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Devesh S. — Global Healthcare Cybersecurity &amp; AI Infrastructure Leader">
+<meta property="og:description" content="AI systems secure by architecture, not by patch. Architecture-first AI security for healthcare." >
+<meta property="og:image" content="assets/headshot.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Devesh S. — Global Healthcare Cybersecurity &amp; AI Infrastructure Leader">
+<meta name="twitter:description" content="AI systems secure by architecture, not by patch. Architecture-first AI security for healthcare.">
+<meta name="twitter:image" content="assets/headshot.jpg">
+
+<!-- Optional: add /assets/favicon.ico (or update the path) -->
+<link rel="icon" href="assets/favicon.ico">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap (minimal) — used only for reboot/accessibility and optional utilities.
+  Do not rely on Bootstrap components/styles; site styling remains custom. -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-reboot.min.css" rel="stylesheet" integrity="sha384-RbQOQy0dO3oU0Q8p6K6kTQGkF5l8pGz7B3p0HhK8uV3m6wqk1wZ0r3p8mJ8b0g8H" crossorigin="anonymous">
 <style>
 
   /* ============ DESIGN TOKENS ============ */
@@ -130,6 +148,20 @@
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
+  /* ============ ACCESSIBILITY ============ */
+  .skip-link{
+    position:absolute;
+    left:-999px;
+    top:12px;
+    padding:10px 14px;
+    border-radius:6px;
+    background:var(--navy-panel);
+    border:1px solid var(--divider);
+    color:var(--off-white);
+    z-index:1000;
+  }
+  .skip-link:focus{left:12px; outline:2px solid var(--gold); outline-offset:3px;}
+
   /* Themed scrollbar — follows the active palette in both modes */
   html{scrollbar-width:thin; scrollbar-color:var(--gold) var(--navy-deep);}
   ::-webkit-scrollbar{width:11px; height:11px;}
@@ -179,6 +211,10 @@
     transition:transform 0.3s ease;
   }
   nav.nav-links a:hover::after, nav.nav-links a:focus-visible::after{transform:scaleX(1);}
+
+  /* Active section indicator (set by JS scrollspy) */
+  nav.nav-links a.is-active{color:var(--off-white);}
+  nav.nav-links a.is-active::after{transform:scaleX(1);}
 
   .nav-controls{display:flex; align-items:center; gap:14px;}
 
@@ -550,6 +586,77 @@
   .skills-net circle{fill:var(--gold); animation:nnPulse 5s ease-in-out infinite; transform-box:fill-box; transform-origin:center;}
   .skills-section .wrap{position:relative; z-index:1;}
 
+  /* ============ PROJECTS ============ */
+  .projects-heading{font-size:clamp(28px,3.6vw,38px); margin-bottom:18px; max-width:600px;}
+  .projects-sub{color:var(--muted); max-width:680px; margin:0 0 42px; font-size:15.5px;}
+  .projects-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:var(--maxw-wide); margin:0 auto;}
+  @media (max-width:980px){.projects-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:700px){.projects-grid{grid-template-columns:1fr;} }
+  .project-card{display:flex; flex-direction:column; gap:14px; min-height:244px;}
+  .project-meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .project-tag{
+    display:inline-flex; align-items:center;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid rgba(47,111,237,0.35);
+    background:rgba(47,111,237,0.10);
+    color:var(--gold-bright);
+    font-size:11.5px;
+    letter-spacing:0.05em;
+    font-weight:600;
+    text-transform:uppercase;
+  }
+  .project-title{font-size:20px; color:var(--off-white); margin:0; line-height:1.25;}
+  .project-desc{margin:0; color:var(--muted); font-size:15px; line-height:1.75;}
+  .project-actions{margin-top:auto; display:flex; gap:12px; flex-wrap:wrap; align-items:center; padding-top:6px;}
+  .project-actions .btn-primary{padding:13px 18px; border-radius:6px;}
+  .project-actions .link-secondary{padding-bottom:2px;}
+
+  .project-detail{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--divider);
+    display:none;
+  }
+  .project-detail.is-open{display:block;}
+  .project-detail h4{
+    font-family:var(--font-body);
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+    margin:0 0 10px;
+  }
+  .project-detail ul{margin:0; padding-left:18px; color:var(--muted); font-size:14.5px; line-height:1.75;}
+  .project-detail li{margin:0 0 8px;}
+  .project-detail li:last-child{margin:0;}
+  .project-detail .detail-actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:14px;}
+  .btn-ghost{
+    display:inline-flex; align-items:center;
+    padding:13px 16px;
+    border-radius:6px;
+    border:1px solid var(--divider);
+    color:var(--off-white);
+    font-weight:600; font-size:14px;
+    background:transparent;
+    cursor:pointer;
+    transition:border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold-bright); transform:translateY(-1px);}
+
+  /* ============ FEATURED ============ */
+  .featured-heading{font-size:clamp(28px,3.6vw,38px); margin-bottom:14px; max-width:720px;}
+  .featured-sub{color:var(--muted); max-width:720px; margin:0 0 44px; font-size:15.5px;}
+  .featured-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:var(--maxw-wide); margin:0 auto;}
+  @media (max-width:980px){.featured-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:700px){.featured-grid{grid-template-columns:1fr;} }
+  .artifact-card{display:flex; flex-direction:column; gap:12px; min-height:220px;}
+  .artifact-kicker{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-weight:600; margin:0;}
+  .artifact-title{font-size:19px; color:var(--off-white); margin:0; line-height:1.3;}
+  .artifact-desc{margin:0; color:var(--muted); font-size:15px; line-height:1.75;}
+  .artifact-actions{margin-top:auto; display:flex; gap:12px; flex-wrap:wrap; align-items:center; padding-top:6px;}
+
   /* ============ CONTACT ============ */
   .contact{
     background:linear-gradient(180deg, var(--navy-base) 0%, var(--navy-deep) 100%);
@@ -570,6 +677,16 @@
   }
   .contact-direct a:hover{border-color:var(--gold); color:var(--gold-bright);}
   .contact-direct .cd-label{display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted-2); margin-bottom:6px; font-weight:500;}
+  .contact-direct .cd-action{
+    display:inline-flex; align-items:center;
+    padding:10px 12px;
+    border-radius:999px;
+    border:1px solid var(--divider);
+    background:rgba(255,255,255,0.02);
+    color:var(--off-white);
+    font-weight:600;
+  }
+  .contact-direct a:hover .cd-action{border-color:var(--gold); background:rgba(255,255,255,0.04);}
 
   form.contact-form{
     display:flex; flex-direction:column; gap:18px;
@@ -604,6 +721,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#about">Skip to content</a>
+
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <header class="site-nav" id="siteNav">
@@ -612,6 +731,8 @@
     <nav class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#featured">Featured</a>
+      <a href="#projects">Projects</a>
       <a href="#framework">Research &amp; Frameworks</a>
       <a href="#recognition">Recognition</a>
       <a href="#contact">Contact</a>
@@ -703,12 +824,12 @@
       <div class="hero-photo">
         <div class="photo-frame">
           <div class="photo-inner">
-            <img id="heroPhoto" src="https://media.licdn.com/dms/image/v2/D4E03AQHtZwgLcZbgBw/profile-displayphoto-scale_400_400/B4EZ6itOKhHwAg-/0/1780846226206?e=1787184000&v=beta&t=H77cIyfwqeHwK5u61SWlr-K9x7TdiMPf2IwEjm0tPzg" alt="Portrait of Devesh S."
+            <img id="heroPhoto" src="./assets/headshot.jpg" alt="Portrait of Devesh S."
                  onerror="this.style.display='none'; document.getElementById('photoPlaceholder').style.display='flex';">
             <div class="photo-placeholder" id="photoPlaceholder" style="display:none;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.4"/></svg>
               <span class="pp-label">Photo unavailable</span>
-              <span class="pp-sub">The linked LinkedIn image expired or failed to load. Replace the <em>src</em> in the code with a locally hosted headshot for reliability.</span>
+              <span class="pp-sub">Local headshot not found. Add <strong>assets/headshot.jpg</strong> next to this HTML file (or update the <em>src</em> path) for reliable loading.</span>
             </div>
           </div>
         </div>
@@ -727,7 +848,7 @@
       </div>
       <div class="stat">
         <span class="stat-num">$40M</span>
-        <span class="stat-label">Opened by the Cyber Security Intelligence Solution</span>
+        <span class="stat-label">Pipeline influenced by the Cyber Security Intelligence Solution</span>
       </div>
       <div class="stat">
         <span class="stat-num">18</span>
@@ -735,7 +856,7 @@
       </div>
       <div class="stat">
         <span class="stat-num">40</span>
-        <span class="stat-label">Person data science hub built &amp; led in Bangalore</span>
+        <span class="stat-label">Person data science hub built &amp; led (Bangalore)</span>
       </div>
     </div>
   </div>
@@ -876,19 +997,59 @@
   </div>
 </section>
 
+<!-- ============ FEATURED ============ -->
+<section class="band" id="featured">
+  <div class="wrap fade-up">
+    <span class="eyebrow">04 — Featured</span>
+    <h2 class="featured-heading">Featured artifacts executives can evaluate in minutes.</h2>
+    <p class="featured-sub">Short, decision-ready materials that make the security thesis concrete. Replace placeholders with live links before publishing.</p>
+
+    <div class="featured-grid">
+      <div class="sk-group artifact-card">
+        <p class="artifact-kicker">Keynote</p>
+        <h3 class="artifact-title">Harnessing AI for Next‑Gen Network &amp; Services Observability</h3>
+        <p class="artifact-desc">A talk that frames AI adoption as an observability problem first — with measurable outcomes, operational controls, and executive-level risk language.</p>
+        <div class="artifact-actions">
+          <a class="btn-primary" href="#contact">Request link</a>
+          <a class="link-secondary" href="#contact">Ask for slides</a>
+        </div>
+      </div>
+
+      <div class="sk-group artifact-card">
+        <p class="artifact-kicker">Whitepaper</p>
+        <h3 class="artifact-title">Digital Twin &amp; Smart City Design</h3>
+        <p class="artifact-desc">Architecture patterns for complex, regulated systems — helpful context for how AI infrastructure and governance scale beyond pilots.</p>
+        <div class="artifact-actions">
+          <a class="btn-primary" href="#contact">Request PDF</a>
+          <a class="link-secondary" href="#contact">Discuss applicability</a>
+        </div>
+      </div>
+
+      <div class="sk-group artifact-card">
+        <p class="artifact-kicker">Framework</p>
+        <h3 class="artifact-title">Secure by Architecture, Not by Patch</h3>
+        <p class="artifact-desc">A compact checklist for boards and CISOs: governance controls mapped to AI failure modes in PHI‑touching workflows.</p>
+        <div class="artifact-actions">
+          <a class="btn-primary" href="#framework">View framework</a>
+          <a class="link-secondary" href="#contact">Request 1‑pager</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ RESEARCH, PUBLICATIONS & PATENTS ============ -->
 <section class="band">
   <div class="wrap fade-up">
-    <span class="eyebrow">04 — Research &amp; Publications</span>
+    <span class="eyebrow">05 — Research &amp; Publications</span>
     <h2 class="research-heading">Doctoral research, whitepapers, patents.</h2>
-    <p class="research-sub">This section is placeholder-safe by design — precise citations replace the bracketed notes below before the site goes live. See "Connect" for how to reach me about any of this work directly.</p>
+    <p class="research-sub">Selected research and publications supporting the "Secure by Architecture" thesis. Full citations and artifacts are available on request.</p>
 
     <div class="rs-group">
       <div class="rs-label">Doctoral Research</div>
       <div class="rs-item">
-        <h4>[Insert exact PhD dissertation title]</h4>
-        <p>PhD, AI &amp; Cybersecurity — [Insert institution], 2025. Focused on architecture-first AI security. Deserves a dedicated abstract and, ideally, its own page — this is the single most important credibility asset on the site.</p>
-        <span class="todo">Add before publishing</span>
+        <h4>PhD, AI &amp; Cybersecurity (2025)</h4>
+        <p>Dissertation focused on architecture-first AI security and governance for regulated environments. Abstract and citation available on request.</p>
       </div>
     </div>
 
@@ -896,13 +1057,11 @@
       <div class="rs-label">Whitepapers</div>
       <div class="rs-item">
         <h4>Digital Twin and Smart City Design</h4>
-        <p>International publication based on the AI-based smart estate platform designed for Singapore's Jurong Innovation District. [Insert publisher/journal name and link.]</p>
-        <span class="todo">Add publisher &amp; link</span>
+        <p>International publication based on the smart estate platform designed for Singapore's Jurong Innovation District. Reference and link available on request.</p>
       </div>
       <div class="rs-item">
         <h4>Harnessing AI for Next-Gen Network &amp; Services Observability</h4>
-        <p>Cisco Live keynote. [Insert link to recording or slides — currently the highest-value dormant asset on this site.]</p>
-        <span class="todo">Add recording link</span>
+        <p>Cisco Live keynote framing AI adoption as an observability and governance problem. Recording/slides available on request.</p>
       </div>
     </div>
 
@@ -910,8 +1069,7 @@
       <div class="rs-label">Patents</div>
       <div class="rs-item">
         <h4>AI-driven customer network transformation</h4>
-        <p>Multiple patents filed during tenure as Lead Data Scientist &amp; Architect, Cisco (2019–2022). [Insert patent numbers/titles from USPTO or Cisco's internal filing records.]</p>
-        <span class="todo">Add patent numbers</span>
+        <p>Multiple patents filed during tenure as Lead Data Scientist &amp; Architect, Cisco (2019–2022). Patent numbers/titles available on request.</p>
       </div>
     </div>
 
@@ -919,8 +1077,7 @@
       <div class="rs-label">In Progress</div>
       <div class="rs-item">
         <h4>What Hospital CIOs Get Wrong About Generative AI</h4>
-        <p>A planned original essay, published on this site rather than only on LinkedIn — the anchor artifact that's fully original and directly supports the healthcare positioning while the citations above are finalized.</p>
-        <span class="todo">Not yet written</span>
+        <p>Original essay on GenAI failure modes in PHI-touching workflows and the governance controls that prevent silent failures.</p>
       </div>
     </div>
   </div>
@@ -929,7 +1086,7 @@
 <!-- ============ RECOGNITION (light band) ============ -->
 <section class="band band-light" id="recognition">
   <div class="wrap fade-up">
-    <span class="eyebrow">05 — Recognition</span>
+    <span class="eyebrow">06 — Recognition</span>
     <h2 class="recog-heading">Recognition &amp; Awards</h2>
     <ul class="recog-list">
       <li><svg class="recog-icon" viewBox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M12 12v4M9 20h6M10 16h4v4h-4v-4Z"/></svg><span class="ry">Cisco</span> Technical Leader Award — Bold Bets contribution</li>
@@ -944,16 +1101,23 @@
 <!-- ============ EDUCATION ============ -->
 <section class="band">
   <div class="read fade-up">
-    <span class="eyebrow">06 — Education</span>
+    <span class="eyebrow">07 — Education</span>
     <h2 class="edu-heading">Education</h2>
     <div class="edu-item">
       <h4>PhD, AI &amp; Cybersecurity</h4>
-      <p>[Insert institution name], 2025</p>
+      <p>National University · Dec 2021 — Dec 2025</p>
     </div>
     <div class="edu-item">
-      <h4>[Insert prior degree — institution, field, year]</h4>
-      <p>Undergraduate or master's degree not yet included in source material.</p>
-      <span class="todo">Add before publishing</span>
+      <h4>Professional Education — Cloud &amp; AIOps: Continuous AI Transformation</h4>
+      <p>Massachusetts Institute of Technology · 2020 — 2021</p>
+    </div>
+    <div class="edu-item">
+      <h4>Master of Business Administration (MBA), Finance &amp; Operations</h4>
+      <p>Management Development Institute, Gurgaon · 2011 — 2013</p>
+    </div>
+    <div class="edu-item">
+      <h4>MCA, Computers</h4>
+      <p>IMS Unison University · 2002 — 2005</p>
     </div>
   </div>
 </section>
@@ -992,7 +1156,7 @@
     </g>
   </svg>
   <div class="wrap fade-up">
-    <span class="eyebrow">07 — Skills &amp; Domains</span>
+    <span class="eyebrow">08 — Skills &amp; Domains</span>
     <h2 class="skills-heading">Where I work.</h2>
     <div class="skills-grid">
       <div class="sk-group">
@@ -1015,22 +1179,105 @@
   </div>
 </section>
 
+<!-- ============ PROJECTS ============ -->
+<section class="band" id="projects">
+  <div class="wrap fade-up">
+    <span class="eyebrow">09 — Projects</span>
+    <h2 class="projects-heading">Selected work.</h2>
+    <p class="projects-sub">Representative healthcare AI/ML work, framed through governance, auditability, and infrastructure that is secure by architecture.</p>
+    <div class="projects-grid">
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Healthcare AI</span>
+          <span class="project-tag">Governance</span>
+        </div>
+        <h3 class="project-title">HIPAA-aligned GenAI Governance Blueprint</h3>
+        <p class="project-desc">A practical governance playbook for clinical GenAI: model + data boundaries, human-in-the-loop checkpoints, audit logging requirements, and failure-mode controls for PHI-touching workflows.</p>
+        <div class="project-actions">
+          <button class="btn-primary" type="button" data-project-open="p1">Open project</button>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+        <div class="project-detail" id="p1" aria-hidden="true">
+          <h4>Executive Summary</h4>
+          <ul>
+            <li><strong>Scope:</strong> policy + process + technical controls for PHI-touching GenAI (clinical notes, patient messaging, prior auth, coding).</li>
+            <li><strong>Controls:</strong> role-based access, data minimization, audit trails, model change management, and safety thresholds for escalation to humans.</li>
+            <li><strong>Output:</strong> a governance blueprint that engineering teams can implement and boards can review as evidence of due diligence.</li>
+          </ul>
+          <div class="detail-actions">
+            <a class="link-secondary" href="#framework">See the core framework</a>
+            <button class="btn-ghost" type="button" data-project-close="p1">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">RAG</span>
+          <span class="project-tag">Safety</span>
+        </div>
+        <h3 class="project-title">Clinical RAG Assistant with Guardrails</h3>
+        <p class="project-desc">A retrieval-augmented assistant pattern for clinical and operational questions: citation-first responses, policy-based PHI handling, prompt-injection resistance, and evaluation harnesses to measure hallucination risk.</p>
+        <div class="project-actions">
+          <button class="btn-primary" type="button" data-project-open="p2">Open project</button>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+        <div class="project-detail" id="p2" aria-hidden="true">
+          <h4>Executive Summary</h4>
+          <ul>
+            <li><strong>Pattern:</strong> RAG with strict retrieval boundaries, citation-first answers, and structured output that is inspectable and auditable.</li>
+            <li><strong>Risk controls:</strong> prompt-injection defenses, PHI policy gating, and evaluation checks for hallucination, refusal quality, and unsafe advice.</li>
+            <li><strong>Outcome:</strong> an assistant architecture designed for regulated healthcare contexts, not generic chat.</li>
+          </ul>
+          <div class="detail-actions">
+            <a class="link-secondary" href="#contact">Request a reference architecture</a>
+            <button class="btn-ghost" type="button" data-project-close="p2">Close</button>
+          </div>
+        </div>
+      </div>
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">AI Security</span>
+          <span class="project-tag">Infrastructure</span>
+        </div>
+        <h3 class="project-title">Secure AI Infrastructure Reference Design</h3>
+        <p class="project-desc">An architecture-first reference for healthcare AI workloads: identity and segmentation, workload isolation, observability, and end-to-end auditability across data, model, and inference layers.</p>
+        <div class="project-actions">
+          <button class="btn-primary" type="button" data-project-open="p3">Open project</button>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+        <div class="project-detail" id="p3" aria-hidden="true">
+          <h4>Executive Summary</h4>
+          <ul>
+            <li><strong>Architecture:</strong> segmentation + workload isolation, secure identity, and policy enforcement across training and inference.</li>
+            <li><strong>Operationalization:</strong> telemetry, drift/behavior monitoring, and auditability that supports incident response and compliance reporting.</li>
+            <li><strong>Decision support:</strong> helps CXOs evaluate “is this governable?” before approving AI in clinical workflows.</li>
+          </ul>
+          <div class="detail-actions">
+            <a class="link-secondary" href="#contact">Ask for an exec briefing</a>
+            <button class="btn-ghost" type="button" data-project-close="p3">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="band contact" id="contact">
   <div class="wrap fade-up">
-    <span class="eyebrow">08 — Connect</span>
+    <span class="eyebrow">10 — Connect</span>
     <h2 class="contact-heading">Let's Compare Notes</h2>
     <p class="contact-body">If you're a health system CISO, CIO, or board member working on secure, governed AI in clinical settings, I'd like to hear how you're thinking about it.</p>
 
     <div class="contact-grid">
       <div class="contact-direct">
-        <a href="#" id="linkedinLink" target="_blank" rel="noopener">
+        <a href="#" id="linkedinLink" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
           <span class="cd-label">LinkedIn</span>
-          [Insert LinkedIn profile URL]
+          <span class="cd-action">Open profile</span>
         </a>
-        <a href="#" id="emailLink">
+        <a href="#" id="emailLink" aria-label="Compose email">
           <span class="cd-label">Email</span>
-          [Insert professional email]
+          <span class="cd-action">Compose</span>
         </a>
       </div>
 
@@ -1066,8 +1313,15 @@
   const CONTACT_EMAIL = "your.email@example.com"; // TODO: replace with real email
   const LINKEDIN_URL = "https://www.linkedin.com/in/devesh-s-70a5a818/";
 
-  document.getElementById('linkedinLink').href = LINKEDIN_URL;
-  document.getElementById('emailLink').href = "mailto:" + CONTACT_EMAIL;
+  // Fill Contact panel links (href + visible text)
+  const linkedinLink = document.getElementById('linkedinLink');
+  linkedinLink.href = LINKEDIN_URL;
+  // Intentionally do not display the raw URL.
+
+  const emailLink = document.getElementById('emailLink');
+  emailLink.href = "mailto:" + CONTACT_EMAIL;
+  // Intentionally do not display the raw email.
+
   document.getElementById('heroLinkedIn').addEventListener('click', function(e){
     e.preventDefault();
     window.open(LINKEDIN_URL, '_blank', 'noopener');
@@ -1084,23 +1338,42 @@
     progressBar.style.width = pct + '%';
   }, {passive:true});
 
-  // ---- Light / dark theme toggle ----
-  // Defaults to dark on every visit (no persistence, so the site always
-  // opens in its primary designed mode). Switching only changes the
-  // in-memory state for this viewing session.
+  // ---- Light / dark theme toggle (persisted) ----
   const themeToggle = document.getElementById('themeToggle');
   const rootEl = document.documentElement;
+  const THEME_KEY = 'portfolio.theme';
+
+  function applyTheme(theme){
+    rootEl.setAttribute('data-theme', theme);
+    rootEl.style.colorScheme = theme;
+    themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  }
+
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if(savedTheme === 'light' || savedTheme === 'dark'){
+    applyTheme(savedTheme);
+  }else{
+    // If no saved preference, keep whatever the HTML starts with.
+    applyTheme(rootEl.getAttribute('data-theme') || 'dark');
+  }
+
   themeToggle.addEventListener('click', function(){
     const isLight = rootEl.getAttribute('data-theme') === 'light';
     const next = isLight ? 'dark' : 'light';
-    rootEl.setAttribute('data-theme', next);
-    rootEl.style.colorScheme = next;
-    themeToggle.setAttribute('aria-pressed', String(!isLight));
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
   });
 
   // ---- Mobile nav toggle ----
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
+
+  function closeMobileNav(){
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+    navToggle.textContent = '☰';
+  }
+
   navToggle.addEventListener('click', function(){
     const isOpen = navLinks.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', isOpen);
@@ -1108,10 +1381,175 @@
   });
   navLinks.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', false);
-      navToggle.textContent = '☰';
+      closeMobileNav();
     });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMobileNav();
+  });
+
+  // ---- (1) Scrollspy: highlight active section in nav ----
+  const navAnchors = Array.from(document.querySelectorAll('#navLinks a[href^="#"]'));
+  const sectionIds = navAnchors
+    .map(a => a.getAttribute('href'))
+    .filter(Boolean)
+    .map(h => h.replace('#', ''));
+  const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  function setActiveNav(id){
+    navAnchors.forEach(a => {
+      const target = (a.getAttribute('href') || '').slice(1);
+      const isActive = target === id;
+      a.setAttribute('aria-current', isActive ? 'page' : 'false');
+      a.classList.toggle('is-active', isActive);
+    });
+  }
+
+  if(sections.length){
+    const spy = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if(visible && visible.target && visible.target.id){
+        setActiveNav(visible.target.id);
+      }
+    }, {
+      root: null,
+      threshold: [0.2, 0.35, 0.5, 0.65],
+      rootMargin: '-18% 0px -70% 0px'
+    });
+    sections.forEach(s => spy.observe(s));
+  }
+
+  // ---- (2) Projects: accessible open/close with aria states ----
+  const projectOpenButtons = Array.from(document.querySelectorAll('[data-project-open]'));
+  const projectCloseButtons = Array.from(document.querySelectorAll('[data-project-close]'));
+
+  function closeProject(id, restoreFocusEl){
+    const panel = document.getElementById(id);
+    if(!panel) return;
+    panel.classList.remove('is-open');
+    panel.setAttribute('aria-hidden', 'true');
+    const opener = document.querySelector('[data-project-open="' + id + '"]');
+    if(opener){
+      opener.setAttribute('aria-expanded', 'false');
+      opener.setAttribute('aria-controls', id);
+      if(restoreFocusEl) opener.focus();
+    }
+  }
+
+  function openProject(id){
+    const panel = document.getElementById(id);
+    if(!panel) return;
+    // Close other open panels to keep scanning clean.
+    document.querySelectorAll('.project-detail.is-open').forEach(p => {
+      if(p.id !== id) closeProject(p.id, false);
+    });
+
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    const opener = document.querySelector('[data-project-open="' + id + '"]');
+    if(opener){
+      opener.setAttribute('aria-expanded', 'true');
+      opener.setAttribute('aria-controls', id);
+    }
+    // Ensure panel is reachable for keyboard users.
+    panel.setAttribute('tabindex', '-1');
+    panel.focus({preventScroll:true});
+    panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  projectOpenButtons.forEach(btn => {
+    const id = btn.getAttribute('data-project-open');
+    if(!id) return;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', id);
+    btn.addEventListener('click', () => {
+      const panel = document.getElementById(id);
+      const isOpen = panel && panel.classList.contains('is-open');
+      if(isOpen) closeProject(id, false);
+      else openProject(id);
+    });
+  });
+
+  projectCloseButtons.forEach(btn => {
+    const id = btn.getAttribute('data-project-close');
+    if(!id) return;
+    btn.addEventListener('click', () => closeProject(id, true));
+  });
+
+  document.addEventListener('click', (e) => {
+    const openPanel = document.querySelector('.project-detail.is-open');
+    if(!openPanel) return;
+    const isInsidePanel = openPanel.contains(e.target);
+    const isOpener = e.target && e.target.closest && e.target.closest('[data-project-open]');
+    if(!isInsidePanel && !isOpener){
+      closeProject(openPanel.id, false);
+    }
+  });
+
+  // ---- (3) Contact form: validate + generate mailto with better formatting ----
+  const contactForm = document.getElementById('contactForm');
+  const nameEl = document.getElementById('cf-name');
+  const orgEl = document.getElementById('cf-org');
+  const msgEl = document.getElementById('cf-msg');
+
+  function clean(s){
+    return String(s || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function buildMailto(){
+    const name = clean(nameEl && nameEl.value);
+    const org = clean(orgEl && orgEl.value);
+    const msg = String(msgEl && msgEl.value ? msgEl.value : '').trim();
+
+    const subjectParts = ['Executive inquiry'];
+    if(org) subjectParts.push(org);
+    const subject = subjectParts.join(' — ');
+
+    const lines = [];
+    if(name) lines.push('Name: ' + name);
+    if(org) lines.push('Organization: ' + org);
+    lines.push('');
+    lines.push(msg);
+    lines.push('');
+    lines.push('Sent via devesh portfolio site');
+    const body = lines.join('\n');
+
+    return 'mailto:' + encodeURIComponent(CONTACT_EMAIL) +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  }
+
+  function validateContact(){
+    const name = clean(nameEl && nameEl.value);
+    const msg = clean(msgEl && msgEl.value);
+    if(!CONTACT_EMAIL || CONTACT_EMAIL === 'your.email@example.com'){
+      return { ok:false, message:'Contact email is not configured yet.' };
+    }
+    if(!name) return { ok:false, message:'Please enter your name.' };
+    if(!msg || msg.length < 12) return { ok:false, message:'Please enter a message (at least 12 characters).' };
+    return { ok:true };
+  }
+
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const v = validateContact();
+      if(!v.ok){
+        alert(v.message);
+        return;
+      }
+      window.location.href = buildMailto();
+    });
+  }
+  document.addEventListener('click', function(e){
+    if(!navLinks.classList.contains('open')) return;
+    const clickedInsideNav = navLinks.contains(e.target) || navToggle.contains(e.target);
+    if(!clickedInsideNav) closeMobileNav();
   });
 
   // ---- Fade-up on scroll ----
@@ -1124,6 +1562,36 @@
     });
   }, {threshold:0.12});
   document.querySelectorAll('.fade-up').forEach(function(el){ observer.observe(el); });
+
+  // ---- Projects: in-page details (executive summaries) ----
+  function closeAllProjectDetails(){
+    document.querySelectorAll('.project-detail.is-open').forEach(function(panel){
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+    });
+  }
+  document.querySelectorAll('[data-project-open]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const id = btn.getAttribute('data-project-open');
+      const panel = document.getElementById(id);
+      if(!panel) return;
+      const willOpen = !panel.classList.contains('is-open');
+      closeAllProjectDetails();
+      if(willOpen){
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+  document.querySelectorAll('[data-project-close]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const id = btn.getAttribute('data-project-close');
+      const panel = document.getElementById(id);
+      if(!panel) return;
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+    });
+  });
 
   // ---- Contact form -> mailto ----
   document.getElementById('contactForm').addEventListener('submit', function(e){
