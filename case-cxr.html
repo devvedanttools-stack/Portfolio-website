@@ -122,6 +122,13 @@
   .callout h4{font-family:var(--font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 8px; color:var(--muted-2); font-weight:700;}
   .callout p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.7;}
 
+  .refs{margin-top:28px; padding-top:18px; border-top:1px solid var(--divider);} 
+  .refs h3{margin-top:0;}
+  .refs ol{margin:12px 0 0; padding-left:20px; color:var(--muted);} 
+  .refs li{margin:0 0 10px;} 
+  .refs a{text-decoration:underline; text-underline-offset:2px;}
+  .refs a:hover{color:var(--off-white);} 
+
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
 
   body::after{content:''; position:fixed; inset:0; z-index:999; pointer-events:none; opacity:0.035; mix-blend-mode:overlay; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
@@ -213,6 +220,42 @@
           <li>Included a clear “why” explanation layer (confidence + common pattern descriptors) rather than opaque alerts.</li>
           <li>Added monitoring for changes in scanner mix, protocol shifts, and labeling practices.</li>
         </ul>
+
+        <div class="refs" aria-label="References">
+          <h3>References</h3>
+          <ol>
+            <li>
+              Purohit S, et al. <strong>Bridging the gap: implementing low‑cost AI radiology services for chest X‑ray interpretation in resource-limited settings.</strong> <em>Journal of Population Therapeutics and Clinical Pharmacology</em>. 2022.
+              <br>
+              <a href="https://jptcp.com/index.php/jptcp/article/view/10391" target="_blank" rel="noreferrer">https://jptcp.com/index.php/jptcp/article/view/10391</a>
+            </li>
+            <li>
+              World Bank AI Repository. <strong>Lunit INSIGHT CXR: AI in Radiology – Hospital Israelita Albert Einstein case study.</strong>
+              <br>
+              <a href="https://airepository.worldbank.org/use-case/lunit-insight-cxr-ai-radiology" target="_blank" rel="noreferrer">https://airepository.worldbank.org/use-case/lunit-insight-cxr-ai-radiology</a>
+            </li>
+            <li>
+              Lunit AI. <strong>Comprehensive chest X‑ray AI detection software (Lunit INSIGHT CXR).</strong> Product and clinical resources (links from case study above).
+              <br>
+              <span class="muted">Follow the “Sources” section on the World Bank use‑case page for Lunit clinical papers and technical blog posts.</span>
+            </li>
+            <li>
+              TorchXRayVision (Lunit &amp; collaborators). <strong>TorchXRayVision: chest X‑ray AI models and tools.</strong> Open-source repository.
+              <br>
+              <a href="https://github.com/mlmed/torchxrayvision" target="_blank" rel="noreferrer">https://github.com/mlmed/torchxrayvision</a>
+            </li>
+            <li>
+              Fleuren LM, Klausch TLT, Zwager CL, et al. <strong>Machine learning for the prediction of sepsis: a systematic review and meta-analysis of diagnostic test accuracy.</strong> <em>Intensive Care Medicine</em>. 2020;46:383–400.
+              <br>
+              <span class="muted">Context reference for ML in imaging and early detection pipelines related to chest imaging and sepsis.</span>
+            </li>
+            <li>
+              NVIDIA Developer Blog. <strong>Deep learning for chest X‑ray analysis with Lunit INSIGHT CXR.</strong>
+              <br>
+              <span class="muted">Linked from the World Bank AI Repository “Sources” section for Lunit INSIGHT CXR.</span>
+            </li>
+          </ol>
+        </div>
       </div>
     </article>
   </div>
