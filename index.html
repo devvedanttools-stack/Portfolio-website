@@ -657,6 +657,17 @@
   .artifact-desc{margin:0; color:var(--muted); font-size:15px; line-height:1.75;}
   .artifact-actions{margin-top:auto; display:flex; gap:12px; flex-wrap:wrap; align-items:center; padding-top:6px;}
 
+  /* Featured case studies (image + executive summary) */
+  .case-card{gap:14px; overflow:hidden;}
+  .case-img{
+    width:100%;
+    aspect-ratio: 16 / 9;
+    object-fit:cover;
+    border-radius:6px;
+    border:1px solid var(--divider);
+    background:var(--navy-base);
+  }
+
   /* ============ CONTACT ============ */
   .contact{
     background:linear-gradient(180deg, var(--navy-base) 0%, var(--navy-deep) 100%);
@@ -732,6 +743,7 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#featured">Featured</a>
+      <a href="./case-monitoring.html">Case Studies</a>
       <a href="#projects">Projects</a>
       <a href="#framework">Research &amp; Frameworks</a>
       <a href="#recognition">Recognition</a>
@@ -1001,39 +1013,42 @@
 <section class="band" id="featured">
   <div class="wrap fade-up">
     <span class="eyebrow">04 — Featured</span>
-    <h2 class="featured-heading">Featured artifacts executives can evaluate in minutes.</h2>
-    <p class="featured-sub">Short, decision-ready materials that make the security thesis concrete. Replace placeholders with live links before publishing.</p>
+    <h2 class="featured-heading">Three real-world healthcare AI case studies.</h2>
+    <p class="featured-sub">Implementation-focused examples executives can scan quickly: what was built, how it integrated into clinical systems, and what changed operationally.</p>
 
-    <div class="featured-grid">
-      <div class="sk-group artifact-card">
-        <p class="artifact-kicker">Keynote</p>
-        <h3 class="artifact-title">Harnessing AI for Next‑Gen Network &amp; Services Observability</h3>
-        <p class="artifact-desc">A talk that frames AI adoption as an observability problem first — with measurable outcomes, operational controls, and executive-level risk language.</p>
+    <div class="featured-grid" aria-label="Featured case studies">
+      <article class="sk-group artifact-card case-card">
+        <img class="case-img" src="assets/case-monitoring.jpg" alt="Hospital patient monitoring dashboard" loading="lazy" decoding="async">
+        <p class="artifact-kicker">Case Study 1</p>
+        <h3 class="artifact-title">Continuous Patient Deterioration Monitoring</h3>
+        <p class="artifact-desc">Wearables + edge ingestion + temporal model risk trajectories embedded into the EHR to surface deterioration trends early — without increasing alarm fatigue.</p>
         <div class="artifact-actions">
-          <a class="btn-primary" href="#contact">Request link</a>
-          <a class="link-secondary" href="#contact">Ask for slides</a>
+          <a class="btn-primary" href="./case-monitoring.html">Open case study</a>
+          <a class="link-secondary" href="#contact">Discuss deployment</a>
         </div>
-      </div>
+      </article>
 
-      <div class="sk-group artifact-card">
-        <p class="artifact-kicker">Whitepaper</p>
-        <h3 class="artifact-title">Digital Twin &amp; Smart City Design</h3>
-        <p class="artifact-desc">Architecture patterns for complex, regulated systems — helpful context for how AI infrastructure and governance scale beyond pilots.</p>
+      <article class="sk-group artifact-card case-card">
+        <img class="case-img" src="assets/case-cxr.jpg" alt="Radiology workstation with imaging overlays" loading="lazy" decoding="async">
+        <p class="artifact-kicker">Case Study 2</p>
+        <h3 class="artifact-title">Chest X‑Ray Triage (Offline-Capable)</h3>
+        <p class="artifact-desc">On-prem DICOM-to-inference pipeline that tags suspicious exams and writes heatmap overlays back into PACS so clinicians can triage when radiology is overloaded.</p>
         <div class="artifact-actions">
-          <a class="btn-primary" href="#contact">Request PDF</a>
-          <a class="link-secondary" href="#contact">Discuss applicability</a>
+          <a class="btn-primary" href="./case-cxr.html">Open case study</a>
+          <a class="link-secondary" href="#contact">Review governance</a>
         </div>
-      </div>
+      </article>
 
-      <div class="sk-group artifact-card">
-        <p class="artifact-kicker">Framework</p>
-        <h3 class="artifact-title">Secure by Architecture, Not by Patch</h3>
-        <p class="artifact-desc">A compact checklist for boards and CISOs: governance controls mapped to AI failure modes in PHI‑touching workflows.</p>
+      <article class="sk-group artifact-card case-card">
+        <img class="case-img" src="assets/case-sepsis.jpg" alt="Emergency department decision-support screen" loading="lazy" decoding="async">
+        <p class="artifact-kicker">Case Study 3</p>
+        <h3 class="artifact-title">Sepsis Early Detection + ED Workflow</h3>
+        <p class="artifact-desc">Hybrid rules + ML decision support integrated into ED operations: triggers bundles, timers, and checklists — designed for adoption, not dashboardware.</p>
         <div class="artifact-actions">
-          <a class="btn-primary" href="#framework">View framework</a>
-          <a class="link-secondary" href="#contact">Request 1‑pager</a>
+          <a class="btn-primary" href="./case-sepsis.html">Open case study</a>
+          <a class="link-secondary" href="#contact">Discuss outcomes</a>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
