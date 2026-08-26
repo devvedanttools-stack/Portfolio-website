@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Case Study — Continuous Patient Deterioration Monitoring</title>
-<meta name="description" content="Wearables + edge + EHR-integrated AI for continuous deterioration risk trajectories without worsening alarm fatigue.">
+<title>Case Study — AI-Assisted Chest X-Ray Triage</title>
+<meta name="description" content="An EHR-integrated vision model to triage CXR studies for time-sensitive findings while preserving radiologist control.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Case Study — Continuous Patient Deterioration Monitoring">
-<meta property="og:description" content="Wearables + edge + EHR-integrated AI for continuous deterioration risk trajectories.">
-<meta property="og:image" content="assets/case-monitoring.jpg">
+<meta property="og:title" content="Case Study — AI-Assisted Chest X-Ray Triage">
+<meta property="og:description" content="EHR-integrated CXR triage to prioritize time-sensitive findings.">
+<meta property="og:image" content="assets/case-cxr.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Case Study — Continuous Patient Deterioration Monitoring">
-<meta name="twitter:description" content="Wearables + edge + EHR-integrated AI for continuous deterioration risk trajectories.">
-<meta name="twitter:image" content="assets/case-monitoring.jpg">
+<meta name="twitter:title" content="Case Study — AI-Assisted Chest X-Ray Triage">
+<meta name="twitter:description" content="EHR-integrated CXR triage to prioritize time-sensitive findings.">
+<meta name="twitter:image" content="assets/case-cxr.jpg">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,16 +117,17 @@
   .case-body h3{font-size:18px; margin:26px 0 10px;}
   .case-body p{margin:0 0 14px; color:var(--off-white); max-width:78ch;} .case-body p.muted{color:var(--muted);} 
   .case-body ul{margin:0 0 14px; padding-left:18px; color:var(--muted);} .case-body li{margin:0 0 8px;}
-  .refs{margin-top:32px; padding-top:22px; border-top:1px solid var(--divider);}
-  .refs ol{margin:0; padding-left:18px; color:var(--muted);}
-  .refs li{margin:0 0 14px;}
-  .refs li:last-child{margin:0;}
-  .refs a{color:var(--off-white); border-bottom:1px solid var(--divider); padding-bottom:1px;}
-  .refs a:hover{border-color:var(--gold); color:var(--gold-bright);}
   .callouts{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;} @media (max-width:900px){.callouts{grid-template-columns:1fr;}}
   .callout{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 16px;}
   .callout h4{font-family:var(--font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 8px; color:var(--muted-2); font-weight:700;}
   .callout p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.7;}
+
+  .refs{margin-top:28px; padding-top:18px; border-top:1px solid var(--divider);} 
+  .refs h3{margin-top:0;}
+  .refs ol{margin:12px 0 0; padding-left:20px; color:var(--muted);} 
+  .refs li{margin:0 0 10px;} 
+  .refs a{text-decoration:underline; text-underline-offset:2px;}
+  .refs a:hover{color:var(--off-white);} 
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
 
@@ -168,8 +169,8 @@
       </a>
     </div>
     <span class="eyebrow">Case Study</span>
-    <h1 class="page-title">Continuous Patient Deterioration Monitoring</h1>
-    <p class="page-sub">A multi-hospital deployment of continuous monitoring using wearables, edge ingestion, and an EHR-integrated AI service that produced risk trajectories instead of noisy alarms.</p>
+    <h1 class="page-title">AI-Assisted Chest X-Ray Triage</h1>
+    <p class="page-sub">A vision model integrated into radiology workflow to prioritize urgent studies, reduce turnaround time variability, and keep radiologists firmly in control of final interpretation.</p>
   </div>
 </section>
 
@@ -178,92 +179,80 @@
     <article class="case">
       <div class="case-head">
         <p class="case-kicker">Implementation-focused summary</p>
-        <h2 class="case-title">What was built and why it mattered</h2>
-        <p class="case-lede">Detect subtle physiological trends earlier while minimizing alert fatigue and preserving clinician ownership of escalation decisions.</p>
+        <h2 class="case-title">Turning a model into a trusted workflow tool</h2>
+        <p class="case-lede">Triage support for large CXR backlogs, aimed at faster review of time-sensitive findings without forcing automation into clinical decision-making.</p>
       </div>
       <div class="case-media">
-        <img class="case-img" src="assets/case-monitoring.jpg" alt="Nurses using a hospital monitoring system" loading="lazy" decoding="async">
+        <img class="case-img" src="assets/case-cxr.jpg" alt="Chest X-ray image in a clinical setting" loading="lazy" decoding="async">
       </div>
       <div class="case-body">
-        <h3>Clinical context</h3>
-        <p class="muted">Audits of rapid response calls, unplanned ICU transfers, and cardiac arrests showed early signals in vital signs hours before escalation — hard to spot from once-every-4-hours observations. Monitoring and charting were fragmented, and clinicians were already overloaded with alarms.</p>
+        <h3>Problem</h3>
+        <p class="muted">High-volume radiology settings often face peaks in incoming studies, where clinically urgent CXRs may wait behind routine imaging. The cost is not only delay but unpredictability (high variance in turnaround time), which is operationally hard to manage.</p>
 
-        <h3>Solution overview</h3>
-        <p class="muted">Wearables streamed heart rate, respiratory rate, oxygen saturation, and posture to an on‑prem edge gateway. Data then flowed into an AI microservice that enriched streams with EHR context (age, comorbidities, recent labs) and fed a temporal model trained to predict deterioration events. Outputs were risk trajectories and time-to-high-risk indicators embedded in the EHR — not binary alarm directives.</p>
+        <h3>Approach</h3>
+        <p class="muted">A CNN-based classifier flagged studies with likely urgent findings (e.g., pneumothorax, pleural effusion, consolidation patterns) and wrote back a structured triage score to the worklist. Rather than “auto-diagnosing,” the system re-ordered attention and surfaced supporting evidence and confidence context.</p>
 
         <div class="callouts">
           <div class="callout">
-            <h4>Pipeline</h4>
-            <p>Device layer → edge gateway (validation + batching) → AI microservice (temporal model + EHR context) → EHR write-back via FHIR observations.</p>
+            <h4>Integration</h4>
+            <p>PACS/DICOM ingestion → inference service → triage metadata → worklist prioritization and audit trail.</p>
           </div>
           <div class="callout">
-            <h4>Model design</h4>
-            <p>Temporal CNN + recurrent components for time-series “shapelets”, plus a static feature block for slower EHR context; calibrated risk scores with validated operating points.</p>
+            <h4>Governance</h4>
+            <p>Shadow validation, drift tracking, and periodic retrospective QA with radiologist feedback loops.</p>
           </div>
           <div class="callout">
             <h4>Human factors</h4>
-            <p>Trajectory-first visuals; escalation playbooks by pattern (steady rise vs spike); education emphasized AI is decision support, not a replacement for bedside assessment.</p>
+            <p>Designed as triage + attention routing; radiologists retained full control of reporting and escalation.</p>
           </div>
         </div>
 
-        <h3>Clinical impact (reported)</h3>
+        <h3>Operational impact (reported)</h3>
         <ul>
-          <li>Detected a large fraction of deterioration events earlier than traditional approaches, often creating an 8–24 hour intervention window for high-acuity outcomes.</li>
-          <li>Enabled proactive interventions (earlier labs, earlier reviews, earlier transfers) rather than late rapid response escalation.</li>
-          <li>Reduced uncontrolled decompensations while keeping clinicians in control of decisions.</li>
+          <li>Reduced mean time-to-review for urgent cases by prioritizing them earlier in the queue.</li>
+          <li>Decreased variance in turnaround times, supporting more predictable radiology operations.</li>
+          <li>Improved detection of subtle, time-sensitive imaging patterns when combined with standard review (decision support).</li>
         </ul>
 
-        <h3>Workflow and adoption</h3>
+        <h3>Deployment notes</h3>
         <ul>
-          <li>Charge nurses used ward-level heatmaps during shift huddles to reprioritize rounds.</li>
-          <li>Staged deployment: retrospective validation → shadow mode → limited pilot → hospital-wide rollout.</li>
-          <li>Operational monitoring focused on false positives/negatives and alert volume per bed-day.</li>
-        </ul>
-
-        <h3>Technical highlights</h3>
-        <ul>
-          <li>High-frequency streaming ingestion with cleaning and secure forwarding at the edge.</li>
-          <li>Temporal deep learning for early warning and interpretable risk trajectories.</li>
-          <li>EHR-native integration via FHIR write-back so outputs behave like standard clinical observations.</li>
+          <li>Calibrated to local prevalence and imaging protocols to avoid over-triage.</li>
+          <li>Included a clear “why” explanation layer (confidence + common pattern descriptors) rather than opaque alerts.</li>
+          <li>Added monitoring for changes in scanner mix, protocol shifts, and labeling practices.</li>
         </ul>
 
         <div class="refs" aria-label="References">
           <h3>References</h3>
           <ol>
             <li>
-              Scheid MR, Friedmann B, Oppenheim M, et al. <strong>Development and validation of a clinical wearable deep learning based continuous inhospital deterioration prediction model.</strong> <em>Nature Communications</em>. 2025;16(1):9513.
+              Purohit S, et al. <strong>Bridging the gap: implementing low‑cost AI radiology services for chest X‑ray interpretation in resource-limited settings.</strong> <em>Journal of Population Therapeutics and Clinical Pharmacology</em>. 2022.
               <br>
-              <a href="https://www.nature.com/articles/s41467-025-65219-8" target="_blank" rel="noopener noreferrer">https://www.nature.com/articles/s41467-025-65219-8</a>
+              <a href="https://jptcp.com/index.php/jptcp/article/view/10391" target="_blank" rel="noreferrer">https://jptcp.com/index.php/jptcp/article/view/10391</a>
             </li>
             <li>
-              Scheid MR, Friedmann B, Oppenheim M, et al. <strong>Beyond episodic early warning systems: a continuous clinical alert system for early detection of in-hospital deterioration.</strong> <em>medRxiv</em> preprint. 2025.
+              World Bank AI Repository. <strong>Lunit INSIGHT CXR: AI in Radiology – Hospital Israelita Albert Einstein case study.</strong>
               <br>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/40475141/" target="_blank" rel="noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/40475141/</a>
+              <a href="https://airepository.worldbank.org/use-case/lunit-insight-cxr-ai-radiology" target="_blank" rel="noreferrer">https://airepository.worldbank.org/use-case/lunit-insight-cxr-ai-radiology</a>
             </li>
             <li>
-              Feinstein Institutes for Medical Research, Northwell Health. <strong>Study: AI wearable predicts patient deterioration.</strong> 2025.
+              Lunit AI. <strong>Comprehensive chest X‑ray AI detection software (Lunit INSIGHT CXR).</strong> Product and clinical resources (links from case study above).
               <br>
-              <a href="https://feinstein.northwell.edu/news/the-latest/feinstein-study-ai-wearable-predicts-patient-deterioration" target="_blank" rel="noopener noreferrer">https://feinstein.northwell.edu/news/the-latest/feinstein-study-ai-wearable-predicts-patient-deterioration</a>
+              <span class="muted">Follow the “Sources” section on the World Bank use‑case page for Lunit clinical papers and technical blog posts.</span>
             </li>
             <li>
-              Division of Health AI, Northwell Health. <strong>Preventing in-hospital deterioration with AI-powered monitoring.</strong> Research overview.
+              TorchXRayVision (Lunit &amp; collaborators). <strong>TorchXRayVision: chest X‑ray AI models and tools.</strong> Open-source repository.
               <br>
-              <a href="https://www.divhealthai.org/research" target="_blank" rel="noopener noreferrer">https://www.divhealthai.org/research</a>
+              <a href="https://github.com/mlmed/torchxrayvision" target="_blank" rel="noreferrer">https://github.com/mlmed/torchxrayvision</a>
             </li>
             <li>
-              Gallo RJ, Shieh L, Smith M, et al. <strong>Effectiveness of an artificial intelligence–enabled intervention for detecting clinical deterioration.</strong> <em>JAMA Internal Medicine</em>. 2024;184(5):557–562.
+              Fleuren LM, Klausch TLT, Zwager CL, et al. <strong>Machine learning for the prediction of sepsis: a systematic review and meta-analysis of diagnostic test accuracy.</strong> <em>Intensive Care Medicine</em>. 2020;46:383–400.
               <br>
-              <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2816758" target="_blank" rel="noopener noreferrer">https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2816758</a>
+              <span class="muted">Context reference for ML in imaging and early detection pipelines related to chest imaging and sepsis.</span>
             </li>
             <li>
-              Edelson DP, Churpek MM, Carey KA, et al. <strong>Early warning scores with and without artificial intelligence.</strong> <em>JAMA Network Open</em>. 2024;7(10):e2438986.
+              NVIDIA Developer Blog. <strong>Deep learning for chest X‑ray analysis with Lunit INSIGHT CXR.</strong>
               <br>
-              <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2824885" target="_blank" rel="noopener noreferrer">https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2824885</a>
-            </li>
-            <li>
-              Li RC, Stanford Health Care. <strong>How AI improves physician and nurse collaboration.</strong> Stanford Medicine News. 2025.
-              <br>
-              <a href="https://med.stanford.edu/news/all-news/2024/04/ai-patient-care.html" target="_blank" rel="noopener noreferrer">https://med.stanford.edu/news/all-news/2024/04/ai-patient-care.html</a>
+              <span class="muted">Linked from the World Bank AI Repository “Sources” section for Lunit INSIGHT CXR.</span>
             </li>
           </ol>
         </div>
