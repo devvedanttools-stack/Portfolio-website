@@ -91,19 +91,14 @@
   .page-title{font-size:clamp(36px,5vw,56px); line-height:1.05; margin-bottom:12px;}
   .page-sub{color:var(--muted); max-width:860px; margin:0; font-size:15.5px; letter-spacing:0.02em;}
   .hero-actions{margin-top:8px; margin-bottom:18px; display:flex; align-items:center; gap:12px;}
-  .back-btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:42px; height:42px;
-    border-radius:999px;
-    background:rgba(255,255,255,0.02);
-    border:1px solid var(--divider);
-    color:var(--off-white);
-    cursor:pointer;
-    transition:transform 0.2s ease, border-color 0.25s ease, background 0.25s ease;
-  }
-  .back-btn:hover{transform:translateY(-1px); border-color:var(--gold); background:rgba(255,255,255,0.04);} 
+  .back-btn{display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 16px 0 12px; border-radius:999px; background:rgba(255,255,255,0.02); border:1px solid var(--divider); color:var(--muted); font-size:13px; font-weight:500; cursor:pointer; transition:transform 0.2s ease, border-color 0.25s ease, background 0.25s ease, color 0.2s ease;}
+  .back-btn:hover{transform:translateY(-1px); border-color:var(--gold); background:rgba(255,255,255,0.04); color:var(--off-white);} 
   .back-btn:active{transform:translateY(0);} 
-  .back-btn svg{width:18px; height:18px; display:block;}
+  .back-btn svg{width:16px; height:16px; display:block; flex-shrink:0;}
+
+  .hero-media{margin-top:26px; border-radius:14px; overflow:hidden; border:1px solid var(--divider); box-shadow:0 18px 40px rgba(0,0,0,0.18);}
+  .hero-caption{margin:10px 2px 0; font-size:13px; color:var(--muted-2); letter-spacing:0.01em;}
+  .hero-img{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
 
   section.band{padding:80px 0;} @media (max-width:720px){ section.band{padding:56px 0;} }
   .case{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; overflow:hidden;}
@@ -111,8 +106,6 @@
   .case-kicker{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 10px;}
   .case-title{font-size:clamp(24px,3vw,30px); margin:0 0 10px;}
   .case-lede{color:var(--muted); margin:0 0 18px; max-width:760px;}
-  .case-media{padding:0 26px 18px;}
-  .case-img{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; border:1px solid var(--divider); background:var(--navy-base);}
   .case-body{padding:0 26px 28px;}
   .case-body h3{font-size:18px; margin:26px 0 10px;}
   .case-body p{margin:0 0 14px; color:var(--off-white); max-width:78ch;} .case-body p.muted{color:var(--muted);} 
@@ -127,6 +120,40 @@
   .callout{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 16px;}
   .callout h4{font-family:var(--font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 8px; color:var(--muted-2); font-weight:700;}
   .callout p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.7;}
+
+  /* Two-column case layout: sticky nav+snapshot rail alongside the main narrative */
+  .case-layout{display:grid; grid-template-columns:216px minmax(0,1fr); gap:36px; align-items:start;}
+  .case-aside{min-width:0;}
+  .aside-sticky{position:sticky; top:100px; display:flex; flex-direction:column; gap:22px;}
+
+  .case-toc{display:flex; flex-direction:column; border-left:1px solid var(--divider); padding-left:16px;}
+  .case-toc-label{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted-2); font-weight:700; margin:0 0 10px;}
+  .case-toc a{display:block; font-size:13.5px; color:var(--muted); padding:7px 0 7px 14px; margin-left:-17px; border-left:2px solid transparent; line-height:1.4; transition:color 0.2s ease, border-color 0.2s ease;}
+  .case-toc a:hover, .case-toc a:focus-visible{color:var(--off-white);}
+  .case-toc a.active{color:var(--off-white); border-left-color:var(--gold);}
+
+  .snapshot{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:18px 18px;}
+  .snapshot h4{font-family:var(--font-body); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin:0 0 14px; color:var(--muted-2); font-weight:700;}
+  .snapshot dl{margin:0; display:flex; flex-direction:column; gap:16px;}
+  .snapshot .fact:not(:first-child){padding-top:16px; border-top:1px solid var(--divider);}
+  .snapshot dt{font-size:11px; color:var(--muted-2); margin:0 0 7px;}
+  .snapshot dd{margin:0; font-size:13.5px; color:var(--off-white); line-height:1.55;}
+  .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--divider); color:var(--muted); margin:0 6px 6px 0; line-height:1.5;}
+
+  /* Section rhythm within the narrative column */
+  .case-section{padding-top:38px; margin-top:38px; border-top:1px solid var(--divider);}
+  .case-section:first-child{padding-top:0; margin-top:0; border-top:none;}
+  .case-body .case-section h3{font-size:21px; margin:0 0 14px;}
+
+  @media (max-width:900px){
+    .case-layout{grid-template-columns:1fr;}
+    .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
+    .case-toc{flex:1 1 220px;}
+    .snapshot{flex:1 1 220px;}
+  }
+  @media (max-width:640px){
+    .aside-sticky{flex-direction:column;}
+  }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
 
@@ -165,69 +192,118 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 18l-6-6 6-6"/>
         </svg>
+        <span>Back to featured</span>
       </a>
     </div>
     <span class="eyebrow">Case Study</span>
     <h1 class="page-title">Continuous Patient Deterioration Monitoring</h1>
     <p class="page-sub">A multi-hospital deployment of continuous monitoring using wearables, edge ingestion, and an EHR-integrated AI service that produced risk trajectories instead of noisy alarms.</p>
+    <figure class="hero-media" aria-label="Case study hero image">
+      <img class="hero-img" src="assets/case-monitoring.jpg" alt="Nurses using a hospital monitoring system" loading="lazy" decoding="async">
+      <figcaption class="hero-caption">Continuous monitoring data + EHR context → deterioration risk trajectories.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <article class="case">
+    <div class="case-layout">
+
+      <aside class="case-aside" aria-label="Case study navigation and snapshot">
+        <div class="aside-sticky">
+          <nav class="case-toc" aria-label="On this page">
+            <span class="case-toc-label">On this page</span>
+            <a href="#context" data-toc>Clinical context</a>
+            <a href="#overview" data-toc>Solution overview</a>
+            <a href="#pipeline" data-toc>Pipeline</a>
+            <a href="#impact" data-toc>Clinical impact</a>
+            <a href="#adoption" data-toc>Workflow &amp; adoption</a>
+            <a href="#highlights" data-toc>Technical highlights</a>
+            <a href="#references" data-toc>References</a>
+          </nav>
+          <div class="snapshot">
+            <h4>Snapshot</h4>
+            <dl>
+              <div class="fact">
+                <dt>Setting</dt>
+                <dd>Multi-hospital continuous monitoring deployment</dd>
+              </div>
+              <div class="fact">
+                <dt>Signals</dt>
+                <dd><span class="tag">Wearables</span><span class="tag">Edge</span><span class="tag">EHR context</span></dd>
+              </div>
+              <div class="fact">
+                <dt>Output</dt>
+                <dd>Risk trajectories (decision support), not alarm directives</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </aside>
+
+      <article class="case">
       <div class="case-head">
         <p class="case-kicker">Implementation-focused summary</p>
         <h2 class="case-title">What was built and why it mattered</h2>
         <p class="case-lede">Detect subtle physiological trends earlier while minimizing alert fatigue and preserving clinician ownership of escalation decisions.</p>
       </div>
-      <div class="case-media">
-        <img class="case-img" src="assets/case-monitoring.jpg" alt="Nurses using a hospital monitoring system" loading="lazy" decoding="async">
-      </div>
       <div class="case-body">
-        <h3>Clinical context</h3>
-        <p class="muted">Audits of rapid response calls, unplanned ICU transfers, and cardiac arrests showed early signals in vital signs hours before escalation — hard to spot from once-every-4-hours observations. Monitoring and charting were fragmented, and clinicians were already overloaded with alarms.</p>
+        <section id="context" class="case-section">
+          <h3>Clinical context</h3>
+          <p class="muted">Audits of rapid response calls, unplanned ICU transfers, and cardiac arrests showed early signals in vital signs hours before escalation — hard to spot from once-every-4-hours observations. Monitoring and charting were fragmented, and clinicians were already overloaded with alarms.</p>
+        </section>
 
-        <h3>Solution overview</h3>
-        <p class="muted">Wearables streamed heart rate, respiratory rate, oxygen saturation, and posture to an on‑prem edge gateway. Data then flowed into an AI microservice that enriched streams with EHR context (age, comorbidities, recent labs) and fed a temporal model trained to predict deterioration events. Outputs were risk trajectories and time-to-high-risk indicators embedded in the EHR — not binary alarm directives.</p>
+        <section id="overview" class="case-section">
+          <h3>Solution overview</h3>
+          <p class="muted">Wearables streamed heart rate, respiratory rate, oxygen saturation, and posture to an on‑prem edge gateway. Data then flowed into an AI microservice that enriched streams with EHR context (age, comorbidities, recent labs) and fed a temporal model trained to predict deterioration events. Outputs were risk trajectories and time-to-high-risk indicators embedded in the EHR — not binary alarm directives.</p>
+        </section>
 
-        <div class="callouts">
-          <div class="callout">
-            <h4>Pipeline</h4>
-            <p>Device layer → edge gateway (validation + batching) → AI microservice (temporal model + EHR context) → EHR write-back via FHIR observations.</p>
+        <section id="pipeline" class="case-section">
+          <h3>Pipeline</h3>
+          <div class="callouts">
+            <div class="callout">
+              <h4>Pipeline</h4>
+              <p>Device layer → edge gateway (validation + batching) → AI microservice (temporal model + EHR context) → EHR write-back via FHIR observations.</p>
+            </div>
+            <div class="callout">
+              <h4>Model design</h4>
+              <p>Temporal CNN + recurrent components for time-series “shapelets”, plus a static feature block for slower EHR context; calibrated risk scores with validated operating points.</p>
+            </div>
+            <div class="callout">
+              <h4>Human factors</h4>
+              <p>Trajectory-first visuals; escalation playbooks by pattern (steady rise vs spike); education emphasized AI is decision support, not a replacement for bedside assessment.</p>
+            </div>
           </div>
-          <div class="callout">
-            <h4>Model design</h4>
-            <p>Temporal CNN + recurrent components for time-series “shapelets”, plus a static feature block for slower EHR context; calibrated risk scores with validated operating points.</p>
-          </div>
-          <div class="callout">
-            <h4>Human factors</h4>
-            <p>Trajectory-first visuals; escalation playbooks by pattern (steady rise vs spike); education emphasized AI is decision support, not a replacement for bedside assessment.</p>
-          </div>
-        </div>
+        </section>
 
-        <h3>Clinical impact (reported)</h3>
-        <ul>
-          <li>Detected a large fraction of deterioration events earlier than traditional approaches, often creating an 8–24 hour intervention window for high-acuity outcomes.</li>
-          <li>Enabled proactive interventions (earlier labs, earlier reviews, earlier transfers) rather than late rapid response escalation.</li>
-          <li>Reduced uncontrolled decompensations while keeping clinicians in control of decisions.</li>
-        </ul>
+        <section id="impact" class="case-section">
+          <h3>Clinical impact (reported)</h3>
+          <ul>
+            <li>Detected a large fraction of deterioration events earlier than traditional approaches, often creating an 8–24 hour intervention window for high-acuity outcomes.</li>
+            <li>Enabled proactive interventions (earlier labs, earlier reviews, earlier transfers) rather than late rapid response escalation.</li>
+            <li>Reduced uncontrolled decompensations while keeping clinicians in control of decisions.</li>
+          </ul>
+        </section>
 
-        <h3>Workflow and adoption</h3>
-        <ul>
-          <li>Charge nurses used ward-level heatmaps during shift huddles to reprioritize rounds.</li>
-          <li>Staged deployment: retrospective validation → shadow mode → limited pilot → hospital-wide rollout.</li>
-          <li>Operational monitoring focused on false positives/negatives and alert volume per bed-day.</li>
-        </ul>
+        <section id="adoption" class="case-section">
+          <h3>Workflow and adoption</h3>
+          <ul>
+            <li>Charge nurses used ward-level heatmaps during shift huddles to reprioritize rounds.</li>
+            <li>Staged deployment: retrospective validation → shadow mode → limited pilot → hospital-wide rollout.</li>
+            <li>Operational monitoring focused on false positives/negatives and alert volume per bed-day.</li>
+          </ul>
+        </section>
 
-        <h3>Technical highlights</h3>
-        <ul>
-          <li>High-frequency streaming ingestion with cleaning and secure forwarding at the edge.</li>
-          <li>Temporal deep learning for early warning and interpretable risk trajectories.</li>
-          <li>EHR-native integration via FHIR write-back so outputs behave like standard clinical observations.</li>
-        </ul>
+        <section id="highlights" class="case-section">
+          <h3>Technical highlights</h3>
+          <ul>
+            <li>High-frequency streaming ingestion with cleaning and secure forwarding at the edge.</li>
+            <li>Temporal deep learning for early warning and interpretable risk trajectories.</li>
+            <li>EHR-native integration via FHIR write-back so outputs behave like standard clinical observations.</li>
+          </ul>
+        </section>
 
-        <div class="refs" aria-label="References">
+        <section id="references" class="refs case-section" aria-label="References">
           <h3>References</h3>
           <ol>
             <li>
@@ -266,7 +342,7 @@
               <a href="https://med.stanford.edu/news/all-news/2024/04/ai-patient-care.html" target="_blank" rel="noopener noreferrer">https://med.stanford.edu/news/all-news/2024/04/ai-patient-care.html</a>
             </li>
           </ol>
-        </div>
+        </section>
       </div>
     </article>
   </div>
@@ -329,6 +405,29 @@
     a.addEventListener('click', function(){ closeMobileNav(); });
   });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMobileNav(); });
+
+  const tocLinks = Array.from(document.querySelectorAll('.case-toc a[data-toc]'));
+  const tocSections = tocLinks
+    .map(function(link){ return document.getElementById(link.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  if(tocLinks.length && tocSections.length && 'IntersectionObserver' in window){
+    const setActive = function(id){
+      tocLinks.forEach(function(link){
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    };
+
+    const spy = new IntersectionObserver(function(entries){
+      const visible = entries.filter(function(e){ return e.isIntersecting; });
+      if(visible.length){
+        visible.sort(function(a,b){ return a.boundingClientRect.top - b.boundingClientRect.top; });
+        setActive(visible[0].target.id);
+      }
+    }, { rootMargin: '-110px 0px -65% 0px', threshold: 0 });
+
+    tocSections.forEach(function(section){ spy.observe(section); });
+  }
 </script>
 </body>
 </html>
