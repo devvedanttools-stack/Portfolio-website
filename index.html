@@ -612,26 +612,7 @@
   .project-actions .btn-primary{padding:13px 18px; border-radius:6px;}
   .project-actions .link-secondary{padding-bottom:2px;}
 
-  .project-detail{
-    margin-top:14px;
-    padding-top:14px;
-    border-top:1px solid var(--divider);
-    display:none;
-  }
-  .project-detail.is-open{display:block;}
-  .project-detail h4{
-    font-family:var(--font-body);
-    font-size:12.5px;
-    font-weight:700;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--muted-2);
-    margin:0 0 10px;
-  }
-  .project-detail ul{margin:0; padding-left:18px; color:var(--muted); font-size:14.5px; line-height:1.75;}
-  .project-detail li{margin:0 0 8px;}
-  .project-detail li:last-child{margin:0;}
-  .project-detail .detail-actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:14px;}
+  /* Projects now open as separate pages (no in-card expanders). */
   .btn-ghost{
     display:inline-flex; align-items:center;
     padding:13px 16px;
@@ -1200,76 +1181,108 @@
     <h2 class="projects-heading">Selected work.</h2>
     <p class="projects-sub">Representative healthcare AI/ML work, framed through governance, auditability, and infrastructure that is secure by architecture.</p>
     <div class="projects-grid">
+
       <div class="sk-group project-card">
         <div class="project-meta">
-          <span class="project-tag">Healthcare AI</span>
-          <span class="project-tag">Governance</span>
+          <span class="project-tag">Sales Automation</span>
+          <span class="project-tag">Agentic AI</span>
         </div>
-        <h3 class="project-title">HIPAA-aligned GenAI Governance Blueprint</h3>
-        <p class="project-desc">A practical governance playbook for clinical GenAI: model + data boundaries, human-in-the-loop checkpoints, audit logging requirements, and failure-mode controls for PHI-touching workflows.</p>
+        <h3 class="project-title">Intent-Driven AI Sales Automation Platform</h3>
+        <p class="project-desc">An end-to-end pipeline that detects buying intent in public social content, enriches contacts, pushes clean leads to CRM, and drafts outreach for human review — designed for repeatability and attribution.</p>
         <div class="project-actions">
-          <button class="btn-primary" type="button" data-project-open="p1">Open project</button>
+          <a class="btn-primary" href="./project-sales-automation.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
         </div>
-        <div class="project-detail" id="p1" aria-hidden="true">
-          <h4>Executive Summary</h4>
-          <ul>
-            <li><strong>Scope:</strong> policy + process + technical controls for PHI-touching GenAI (clinical notes, patient messaging, prior auth, coding).</li>
-            <li><strong>Controls:</strong> role-based access, data minimization, audit trails, model change management, and safety thresholds for escalation to humans.</li>
-            <li><strong>Output:</strong> a governance blueprint that engineering teams can implement and boards can review as evidence of due diligence.</li>
-          </ul>
-          <div class="detail-actions">
-            <a class="link-secondary" href="#framework">See the core framework</a>
-            <button class="btn-ghost" type="button" data-project-close="p1">Close</button>
-          </div>
-        </div>
       </div>
+
       <div class="sk-group project-card">
         <div class="project-meta">
+          <span class="project-tag">Manufacturing</span>
           <span class="project-tag">RAG</span>
-          <span class="project-tag">Safety</span>
         </div>
-        <h3 class="project-title">Clinical RAG Assistant with Guardrails</h3>
-        <p class="project-desc">A retrieval-augmented assistant pattern for clinical and operational questions: citation-first responses, policy-based PHI handling, prompt-injection resistance, and evaluation harnesses to measure hallucination risk.</p>
+        <h3 class="project-title">Agentic AI Technical Sales Consultant (Web)</h3>
+        <p class="project-desc">A domain-aware website agent that guides buyers through process selection, materials, constraints, and RFQ capture — behaving like a technical sales engineer, not a generic chatbot.</p>
         <div class="project-actions">
-          <button class="btn-primary" type="button" data-project-open="p2">Open project</button>
+          <a class="btn-primary" href="./project-manufacturing-sales-consultant.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
-        </div>
-        <div class="project-detail" id="p2" aria-hidden="true">
-          <h4>Executive Summary</h4>
-          <ul>
-            <li><strong>Pattern:</strong> RAG with strict retrieval boundaries, citation-first answers, and structured output that is inspectable and auditable.</li>
-            <li><strong>Risk controls:</strong> prompt-injection defenses, PHI policy gating, and evaluation checks for hallucination, refusal quality, and unsafe advice.</li>
-            <li><strong>Outcome:</strong> an assistant architecture designed for regulated healthcare contexts, not generic chat.</li>
-          </ul>
-          <div class="detail-actions">
-            <a class="link-secondary" href="#contact">Request a reference architecture</a>
-            <button class="btn-ghost" type="button" data-project-close="p2">Close</button>
-          </div>
         </div>
       </div>
+
       <div class="sk-group project-card">
         <div class="project-meta">
-          <span class="project-tag">AI Security</span>
-          <span class="project-tag">Infrastructure</span>
+          <span class="project-tag">Voice</span>
+          <span class="project-tag">Search</span>
         </div>
-        <h3 class="project-title">Secure AI Infrastructure Reference Design</h3>
-        <p class="project-desc">An architecture-first reference for healthcare AI workloads: identity and segmentation, workload isolation, observability, and end-to-end auditability across data, model, and inference layers.</p>
+        <h3 class="project-title">Voice-Powered Media Intelligence Search</h3>
+        <p class="project-desc">A voice-first platform that makes internal product images and training videos instantly discoverable via natural-language queries, replacing manual folder navigation with ranked, previewable results.</p>
         <div class="project-actions">
-          <button class="btn-primary" type="button" data-project-open="p3">Open project</button>
+          <a class="btn-primary" href="./project-voice-media-search.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
         </div>
-        <div class="project-detail" id="p3" aria-hidden="true">
-          <h4>Executive Summary</h4>
-          <ul>
-            <li><strong>Architecture:</strong> segmentation + workload isolation, secure identity, and policy enforcement across training and inference.</li>
-            <li><strong>Operationalization:</strong> telemetry, drift/behavior monitoring, and auditability that supports incident response and compliance reporting.</li>
-            <li><strong>Decision support:</strong> helps CXOs evaluate “is this governable?” before approving AI in clinical workflows.</li>
-          </ul>
-          <div class="detail-actions">
-            <a class="link-secondary" href="#contact">Ask for an exec briefing</a>
-            <button class="btn-ghost" type="button" data-project-close="p3">Close</button>
-          </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Automation</span>
+          <span class="project-tag">Data Pipeline</span>
+        </div>
+        <h3 class="project-title">Automated Procurement Intelligence (No-API Suppliers)</h3>
+        <p class="project-desc">An AI-augmented scraping + extraction pipeline that keeps product and expiry data current across supplier sites without APIs, normalizing outputs into analysis-ready files and alerts.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./project-procurement-intelligence.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Personalization</span>
+          <span class="project-tag">GenAI</span>
+        </div>
+        <h3 class="project-title">AI Product Personalization Engine (Creator Commerce)</h3>
+        <p class="project-desc">A prompt-to-design personalization engine that generates print-ready artwork, previews it on products, and produces production-safe assets — enabling open-ended customization without linear design headcount.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./project-ai-personalization.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Chemistry</span>
+          <span class="project-tag">Data Intelligence</span>
+        </div>
+        <h3 class="project-title">AI Chemical Intelligence Platform (Research &amp; Procurement)</h3>
+        <p class="project-desc">An AI-driven platform that automates collection, parsing, and normalization of compound and supplier data into a single analysis-ready dataset, reducing manual research and improving decision speed.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./project-ai-chemical-intelligence.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Ecommerce</span>
+          <span class="project-tag">Agentic AI</span>
+        </div>
+        <h3 class="project-title">Agentic System Design Chatbot (Industrial Water Treatment)</h3>
+        <p class="project-desc">A catalog-aware chatbot that diagnoses problems, designs treatment systems, and recommends compatible products across a 20k+ SKU taxonomy — with end-to-end analytics from chat to revenue.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./project-agentic-system-design.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Avatar</span>
+          <span class="project-tag">Voice</span>
+        </div>
+        <h3 class="project-title">Avatar-Based Shopping Assistant (Premium Ecommerce)</h3>
+        <p class="project-desc">A voice + chat assistant with a lifelike video avatar front-end, connected to product search and tool-based reasoning to guide discovery and purchasing in a distinctive, on-brand experience.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./project-avatar-shopping-assistant.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
         </div>
       </div>
     </div>
@@ -1438,72 +1451,7 @@
     sections.forEach(s => spy.observe(s));
   }
 
-  // ---- (2) Projects: accessible open/close with aria states ----
-  const projectOpenButtons = Array.from(document.querySelectorAll('[data-project-open]'));
-  const projectCloseButtons = Array.from(document.querySelectorAll('[data-project-close]'));
-
-  function closeProject(id, restoreFocusEl){
-    const panel = document.getElementById(id);
-    if(!panel) return;
-    panel.classList.remove('is-open');
-    panel.setAttribute('aria-hidden', 'true');
-    const opener = document.querySelector('[data-project-open="' + id + '"]');
-    if(opener){
-      opener.setAttribute('aria-expanded', 'false');
-      opener.setAttribute('aria-controls', id);
-      if(restoreFocusEl) opener.focus();
-    }
-  }
-
-  function openProject(id){
-    const panel = document.getElementById(id);
-    if(!panel) return;
-    // Close other open panels to keep scanning clean.
-    document.querySelectorAll('.project-detail.is-open').forEach(p => {
-      if(p.id !== id) closeProject(p.id, false);
-    });
-
-    panel.classList.add('is-open');
-    panel.setAttribute('aria-hidden', 'false');
-    const opener = document.querySelector('[data-project-open="' + id + '"]');
-    if(opener){
-      opener.setAttribute('aria-expanded', 'true');
-      opener.setAttribute('aria-controls', id);
-    }
-    // Ensure panel is reachable for keyboard users.
-    panel.setAttribute('tabindex', '-1');
-    panel.focus({preventScroll:true});
-    panel.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }
-
-  projectOpenButtons.forEach(btn => {
-    const id = btn.getAttribute('data-project-open');
-    if(!id) return;
-    btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-controls', id);
-    btn.addEventListener('click', () => {
-      const panel = document.getElementById(id);
-      const isOpen = panel && panel.classList.contains('is-open');
-      if(isOpen) closeProject(id, false);
-      else openProject(id);
-    });
-  });
-
-  projectCloseButtons.forEach(btn => {
-    const id = btn.getAttribute('data-project-close');
-    if(!id) return;
-    btn.addEventListener('click', () => closeProject(id, true));
-  });
-
-  document.addEventListener('click', (e) => {
-    const openPanel = document.querySelector('.project-detail.is-open');
-    if(!openPanel) return;
-    const isInsidePanel = openPanel.contains(e.target);
-    const isOpener = e.target && e.target.closest && e.target.closest('[data-project-open]');
-    if(!isInsidePanel && !isOpener){
-      closeProject(openPanel.id, false);
-    }
-  });
+  // ---- (2) Projects: separate pages (no in-card expanders) ----
 
   // ---- (3) Contact form: validate + generate mailto with better formatting ----
   const contactForm = document.getElementById('contactForm');
@@ -1577,50 +1525,7 @@
   }, {threshold:0.12});
   document.querySelectorAll('.fade-up').forEach(function(el){ observer.observe(el); });
 
-  // ---- Projects: in-page details (executive summaries) ----
-  function closeAllProjectDetails(){
-    document.querySelectorAll('.project-detail.is-open').forEach(function(panel){
-      panel.classList.remove('is-open');
-      panel.setAttribute('aria-hidden', 'true');
-    });
-  }
-  document.querySelectorAll('[data-project-open]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      const id = btn.getAttribute('data-project-open');
-      const panel = document.getElementById(id);
-      if(!panel) return;
-      const willOpen = !panel.classList.contains('is-open');
-      closeAllProjectDetails();
-      if(willOpen){
-        panel.classList.add('is-open');
-        panel.setAttribute('aria-hidden', 'false');
-      }
-    });
-  });
-  document.querySelectorAll('[data-project-close]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      const id = btn.getAttribute('data-project-close');
-      const panel = document.getElementById(id);
-      if(!panel) return;
-      panel.classList.remove('is-open');
-      panel.setAttribute('aria-hidden', 'true');
-    });
-  });
-
-  // ---- Contact form -> mailto ----
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('cf-name').value;
-    const org = document.getElementById('cf-org').value;
-    const msg = document.getElementById('cf-msg').value;
-    const subject = encodeURIComponent("Portfolio inquiry from " + name);
-    const body = encodeURIComponent(
-      "Name: " + name + "\n" +
-      "Organization: " + org + "\n\n" +
-      msg
-    );
-    window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
-  });
+  // (Removed legacy duplicate handlers: project expanders + second contact mailto submit)
 </script>
 
 </body>
