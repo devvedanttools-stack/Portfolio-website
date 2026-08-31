@@ -91,19 +91,14 @@
   .page-title{font-size:clamp(36px,5vw,56px); line-height:1.05; margin-bottom:12px;}
   .page-sub{color:var(--muted); max-width:860px; margin:0; font-size:15.5px; letter-spacing:0.02em;}
   .hero-actions{margin-top:8px; margin-bottom:18px; display:flex; align-items:center; gap:12px;}
-  .back-btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:42px; height:42px;
-    border-radius:999px;
-    background:rgba(255,255,255,0.02);
-    border:1px solid var(--divider);
-    color:var(--off-white);
-    cursor:pointer;
-    transition:transform 0.2s ease, border-color 0.25s ease, background 0.25s ease;
-  }
-  .back-btn:hover{transform:translateY(-1px); border-color:var(--gold); background:rgba(255,255,255,0.04);} 
+  .back-btn{display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 16px 0 12px; border-radius:999px; background:rgba(255,255,255,0.02); border:1px solid var(--divider); color:var(--muted); font-size:13px; font-weight:500; cursor:pointer; transition:transform 0.2s ease, border-color 0.25s ease, background 0.25s ease, color 0.2s ease;}
+  .back-btn:hover{transform:translateY(-1px); border-color:var(--gold); background:rgba(255,255,255,0.04); color:var(--off-white);} 
   .back-btn:active{transform:translateY(0);} 
-  .back-btn svg{width:18px; height:18px; display:block;}
+  .back-btn svg{width:16px; height:16px; display:block; flex-shrink:0;}
+
+  .hero-media{margin-top:26px; border-radius:14px; overflow:hidden; border:1px solid var(--divider); box-shadow:0 18px 40px rgba(0,0,0,0.18);}
+  .hero-caption{margin:10px 2px 0; font-size:13px; color:var(--muted-2); letter-spacing:0.01em;}
+  .hero-img{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
 
   section.band{padding:80px 0;} @media (max-width:720px){ section.band{padding:56px 0;} }
   .case{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; overflow:hidden;}
@@ -111,8 +106,6 @@
   .case-kicker{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0 0 10px;}
   .case-title{font-size:clamp(24px,3vw,30px); margin:0 0 10px;}
   .case-lede{color:var(--muted); margin:0 0 18px; max-width:760px;}
-  .case-media{padding:0 26px 18px;}
-  .case-img{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; border:1px solid var(--divider); background:var(--navy-base);}
   .case-body{padding:0 26px 28px;}
   .case-body h3{font-size:18px; margin:26px 0 10px;}
   .case-body p{margin:0 0 14px; color:var(--off-white); max-width:78ch;} .case-body p.muted{color:var(--muted);} 
@@ -128,6 +121,40 @@
   .refs li{margin:0 0 10px;} 
   .refs a{text-decoration:underline; text-underline-offset:2px;}
   .refs a:hover{color:var(--off-white);} 
+
+  /* Two-column case layout: sticky nav+snapshot rail alongside the main narrative */
+  .case-layout{display:grid; grid-template-columns:216px minmax(0,1fr); gap:36px; align-items:start;}
+  .case-aside{min-width:0;}
+  .aside-sticky{position:sticky; top:100px; display:flex; flex-direction:column; gap:22px;}
+
+  .case-toc{display:flex; flex-direction:column; border-left:1px solid var(--divider); padding-left:16px;}
+  .case-toc-label{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted-2); font-weight:700; margin:0 0 10px;}
+  .case-toc a{display:block; font-size:13.5px; color:var(--muted); padding:7px 0 7px 14px; margin-left:-17px; border-left:2px solid transparent; line-height:1.4; transition:color 0.2s ease, border-color 0.2s ease;}
+  .case-toc a:hover, .case-toc a:focus-visible{color:var(--off-white);}
+  .case-toc a.active{color:var(--off-white); border-left-color:var(--gold);}
+
+  .snapshot{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:18px 18px;}
+  .snapshot h4{font-family:var(--font-body); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin:0 0 14px; color:var(--muted-2); font-weight:700;}
+  .snapshot dl{margin:0; display:flex; flex-direction:column; gap:16px;}
+  .snapshot .fact:not(:first-child){padding-top:16px; border-top:1px solid var(--divider);}
+  .snapshot dt{font-size:11px; color:var(--muted-2); margin:0 0 7px;}
+  .snapshot dd{margin:0; font-size:13.5px; color:var(--off-white); line-height:1.55;}
+  .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--divider); color:var(--muted); margin:0 6px 6px 0; line-height:1.5;}
+
+  /* Section rhythm within the narrative column */
+  .case-section{padding-top:38px; margin-top:38px; border-top:1px solid var(--divider);}
+  .case-section:first-child{padding-top:0; margin-top:0; border-top:none;}
+  .case-body .case-section h3{font-size:21px; margin:0 0 14px;}
+
+  @media (max-width:900px){
+    .case-layout{grid-template-columns:1fr;}
+    .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
+    .case-toc{flex:1 1 220px;}
+    .snapshot{flex:1 1 220px;}
+  }
+  @media (max-width:640px){
+    .aside-sticky{flex-direction:column;}
+  }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
 
@@ -166,32 +193,74 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M15 18l-6-6 6-6"/>
         </svg>
+        <span>Back to featured</span>
       </a>
     </div>
     <span class="eyebrow">Case Study</span>
     <h1 class="page-title">Sepsis Early Warning & Treatment Optimization</h1>
     <p class="page-sub">A real-time EHR-driven pipeline to identify sepsis risk earlier, support timely interventions, and reduce mortality by aligning alerts with actionable clinical pathways.</p>
+    <figure class="hero-media" aria-label="Case study hero image">
+      <img class="hero-img" src="assets/case-sepsis.jpg" alt="Clinician reviewing patient vitals" loading="lazy" decoding="async">
+      <figcaption class="hero-caption">Real-time risk scoring aligned to pathway actions (not noisy alerts).</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <article class="case">
+    <div class="case-layout">
+
+      <aside class="case-aside" aria-label="Case study navigation and snapshot">
+        <div class="aside-sticky">
+          <nav class="case-toc" aria-label="On this page">
+            <span class="case-toc-label">On this page</span>
+            <a href="#challenge" data-toc>Challenge</a>
+            <a href="#design" data-toc>System design</a>
+            <a href="#components" data-toc>Key components</a>
+            <a href="#impact" data-toc>Clinical impact</a>
+            <a href="#governance" data-toc>Safety &amp; governance</a>
+            <a href="#outcomes" data-toc>Technical outcomes</a>
+            <a href="#references" data-toc>References</a>
+          </nav>
+          <div class="snapshot">
+            <h4>Snapshot</h4>
+            <dl>
+              <div class="fact">
+                <dt>Inputs</dt>
+                <dd><span class="tag">Vitals</span><span class="tag">Labs</span><span class="tag">Meds</span><span class="tag">History</span></dd>
+              </div>
+              <div class="fact">
+                <dt>Model</dt>
+                <dd>Calibrated risk score + trend features</dd>
+              </div>
+              <div class="fact">
+                <dt>Output</dt>
+                <dd>Next-best-action prompts mapped to sepsis bundles</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </aside>
+
+      <article class="case">
       <div class="case-head">
         <p class="case-kicker">Implementation-focused summary</p>
         <h2 class="case-title">From noisy alerts to actionable care</h2>
         <p class="case-lede">The goal was earlier and more reliable identification of sepsis risk, paired with treatment optimization support that clinicians could trust and operationalize.</p>
       </div>
-      <div class="case-media">
-        <img class="case-img" src="assets/case-sepsis.jpg" alt="Clinician reviewing patient vitals" loading="lazy" decoding="async">
-      </div>
       <div class="case-body">
+        <section id="challenge" class="case-section">
         <h3>Challenge</h3>
         <p class="muted">Sepsis progression can be rapid, yet early signs are subtle and distributed across vitals, labs, and clinical notes. Traditional rule-based alerts often produce high false positive rates, contributing to alert fatigue and inconsistent adoption.</p>
+        </section>
 
+        <section id="design" class="case-section">
         <h3>System design</h3>
         <p class="muted">A feature pipeline aggregated vitals, labs, medication administrations, and comorbidity profiles. A predictive model produced a calibrated risk score and trend, then surfaced an actionable pathway prompt (e.g., reassess, order cultures, initiate fluids/antibiotics per protocol) tailored to the clinical context.</p>
+        </section>
 
+        <section id="components" class="case-section">
+        <h3>Key components</h3>
         <div class="callouts">
           <div class="callout">
             <h4>Data</h4>
@@ -206,29 +275,36 @@
             <p>Alert routing matched to roles (nurse vs physician) and emphasized “next best action” rather than generic warnings.</p>
           </div>
         </div>
+        </section>
 
+        <section id="impact" class="case-section">
         <h3>Clinical impact (reported)</h3>
         <ul>
           <li>Earlier identification of sepsis cases with improved sensitivity vs traditional rules, enabling faster intervention.</li>
           <li>Reduced false alarms and improved clinician trust through calibration and pathway-aligned alerts.</li>
           <li>Measurable reductions in sepsis-related mortality reported across participating hospitals after deployment and workflow integration.</li>
         </ul>
+        </section>
 
+        <section id="governance" class="case-section">
         <h3>Safety and governance</h3>
         <ul>
           <li>Continuous monitoring for drift (seasonality, lab ordering patterns, population changes).</li>
           <li>Audit trails for alert delivery, acknowledgment, and follow-up actions.</li>
           <li>Regular multidisciplinary review with clinical leadership to tune thresholds and pathways.</li>
         </ul>
+        </section>
 
+        <section id="outcomes" class="case-section">
         <h3>Key technical outcomes</h3>
         <ul>
           <li>Real-time streaming risk computation with EHR-native display and documentation.</li>
           <li>Contextualized recommendations mapped to established sepsis bundles.</li>
           <li>Reduced alert fatigue by focusing on clinically actionable, high-confidence signals.</li>
         </ul>
+        </section>
 
-        <div class="refs" aria-label="References">
+        <section id="references" class="refs case-section" aria-label="References">
           <h3>References</h3>
           <ol>
             <li>
@@ -267,7 +343,7 @@
               <a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1794922/full" target="_blank" rel="noreferrer">https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1794922/full</a>
             </li>
           </ol>
-        </div>
+        </section>
       </div>
     </article>
   </div>
@@ -330,6 +406,29 @@
     a.addEventListener('click', function(){ closeMobileNav(); });
   });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMobileNav(); });
+
+  const tocLinks = Array.from(document.querySelectorAll('.case-toc a[data-toc]'));
+  const tocSections = tocLinks
+    .map(function(link){ return document.getElementById(link.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  if(tocLinks.length && tocSections.length && 'IntersectionObserver' in window){
+    const setActive = function(id){
+      tocLinks.forEach(function(link){
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    };
+
+    const spy = new IntersectionObserver(function(entries){
+      const visible = entries.filter(function(e){ return e.isIntersecting; });
+      if(visible.length){
+        visible.sort(function(a,b){ return a.boundingClientRect.top - b.boundingClientRect.top; });
+        setActive(visible[0].target.id);
+      }
+    }, { rootMargin: '-110px 0px -65% 0px', threshold: 0 });
+
+    tocSections.forEach(function(section){ spy.observe(section); });
+  }
 </script>
 </body>
 </html>
