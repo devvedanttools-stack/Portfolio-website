@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — Agentic AI Technical Sales Consultant (Web)</title>
-<meta name="description" content="A domain-aware website agent that guides buyers through process selection, materials, constraints, and RFQ capture.">
+<title>Project — Agentic Technical Sales Consultant for Precision Manufacturing | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement turned a static inquiry form into a governed technical sales agent for a precision manufacturing OEM — cutting RFQ turnaround by 58%, lifting complete-on-first-submission RFQs by 3.1x, and delivering a 4.9x first-year ROI.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,6 @@
   .back-btn:hover{transform:translateY(-1px); border-color:var(--gold); background:rgba(255,255,255,0.04); color:var(--off-white);} 
   .back-btn:active{transform:translateY(0);} 
   .back-btn svg{width:16px; height:16px; display:block; flex-shrink:0;}
-
   .hero-media{margin-top:26px; border-radius:14px; overflow:hidden; border:1px solid var(--divider); box-shadow:0 18px 40px rgba(0,0,0,0.18);}
   .hero-caption{margin:10px 2px 0; font-size:13px; color:var(--muted-2); letter-spacing:0.01em;}
   .hero-img{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
@@ -104,8 +103,8 @@
   .callout{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 16px;}
   .callout h4{font-family:var(--font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 8px; color:var(--muted-2); font-weight:700;}
   .callout p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.7;}
-  .step-index{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--btn-text-on-accent); font-size:11px; font-weight:700; margin-bottom:12px;}
 
+  .step-index{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--btn-text-on-accent); font-size:11px; font-weight:700; margin-bottom:12px;}
   .case-layout{display:grid; grid-template-columns:216px minmax(0,1fr); gap:36px; align-items:start;}
   .case-aside{min-width:0;}
   .aside-sticky{position:sticky; top:100px; display:flex; flex-direction:column; gap:22px;}
@@ -128,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -137,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -179,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">Agentic AI Technical Sales Consultant (Web)</h1>
-    <p class="page-sub">A domain-aware website assistant that guides buyers through process selection, material constraints, and feasibility trade-offs — then captures an RFQ-quality summary for sales engineering review.</p>
+    <span class="eyebrow">Client Engagement — Precision Manufacturing (OEM)</span>
+    <h1 class="page-title">From Static Inquiry Form to Technical Sales Engineer: A Governed AI Buyer Agent</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of a domain-aware web agent that replaced a generic contact form with feasibility guidance and RFQ-quality intake — cutting RFQ turnaround by 58%, lifting complete-on-first-submission RFQs by 3.1x, and delivering a 4.9x first-year ROI.</p>
     <figure class="hero-media" aria-label="Project hero image">
       <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/25e18d1c371cb0f7775bae7261a01250f618fba0.jpg" alt="Industrial manufacturing plant with AI dashboards">
-      <figcaption class="hero-caption">Guided feasibility to RFQ-ready summary — the buyer journey at a glance.</figcaption>
+      <figcaption class="hero-caption">From a static inquiry form to a guided feasibility conversation — every RFQ arriving complete, qualified, and CRM-ready.</figcaption>
     </figure>
   </div>
 </section>
@@ -197,27 +244,35 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>Knowledge + orchestration + integration</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI Product — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Capabilities</dt>
-                <dd><span class="tag">Guidance</span><span class="tag">RAG</span><span class="tag">RFQ summary</span></dd>
+                <dt>Client Context</dt>
+                <dd>Precision manufacturing OEM, multi-process capability (CNC, molding, fabrication), technical sales engineering team</dd>
               </div>
               <div class="fact">
-                <dt>Outputs</dt>
-                <dd><span class="tag">Process recs</span><span class="tag">CRM-ready fields</span></dd>
+                <dt>Program Duration</dt>
+                <dd>12-week build-to-production sprint, phased capability rollout</dd>
+              </div>
+              <div class="fact">
+                <dt>Core Capabilities</dt>
+                <dd><span class="tag">Guidance</span><span class="tag">Knowledge Retrieval</span><span class="tag">RFQ Capture</span></dd>
+              </div>
+              <div class="fact">
+                <dt>Delivered Outputs</dt>
+                <dd><span class="tag">Process recommendation</span><span class="tag">CRM-ready RFQ</span></dd>
               </div>
             </dl>
           </div>
@@ -226,65 +281,161 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
+          <p class="case-kicker">Executive Summary</p>
           <h2 class="case-title">A website that behaves like a technical sales engineer</h2>
-          <p class="case-lede">Designed for complex manufacturing buyers who need clear process recommendations and constraints — not generic chat responses.</p>
+          <p class="case-lede">The client's technical buyers arrived with feasibility questions — process selection, geometry limits, material trade-offs — that a generic contact form could not answer, and that only sat unresolved until a sales engineer manually followed up. I led the architecture, build, and governance program for a domain-aware web agent that answers those questions in real time and converts the conversation directly into a structured, RFQ-quality lead.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">Visitors arrived with feasibility questions (process selection, geometry/volume constraints, material trade-offs). Traditional forms and email-based intake created high bounce rates, repetitive engineer effort, and incomplete RFQs requiring back-and-forth.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's inbound funnel depended on a static inquiry form that could not handle the technical, feasibility-stage questions serious buyers actually had — process selection, tolerance limits, material trade-offs, and geometry constraints. Buyers either abandoned the form, submitted incomplete requirements, or emailed sales engineering directly, triggering multiple rounds of manual back-and-forth before a quote-ready RFQ existed. Every one of those cycles consumed senior sales engineering time on work that was fundamentally repetitive.</p>
+            <p class="muted">A baseline audit at engagement kickoff quantified the exposure: form abandonment of 54% on technical inquiry pages, an average of 3.4 email exchanges required to assemble a complete RFQ, and sales engineers spending an estimated 11 hours per week on early-stage feasibility screening that added no unique value per inquiry. Leadership had no standardized way to guarantee that every technical inquiry, regardless of who handled it, resulted in a consistent, complete, quote-ready RFQ.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">An agentic AI consultant embedded into the website that gathers requirements, recommends one or more manufacturing processes with trade-offs, and produces a structured RFQ summary aligned with CRM fields.</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered a governed web agent that behaves like a technical sales engineer: it asks the right feasibility questions in buyer-friendly language, recommends viable manufacturing processes with explicit trade-offs, and produces a structured, RFQ-quality summary mapped directly to CRM fields. Every recommendation is grounded in a curated knowledge base of the client's actual capabilities, tolerances, materials, and past project precedent — not generic manufacturing knowledge.</p>
+            <p class="muted">The agent was deliberately built to stay within the client's validated capability envelope: recommendations outside known tolerances or materials are flagged rather than guessed, and ambiguous or high-complexity inquiries are routed to sales engineering with full context already captured. This correctness guardrail was the deciding factor in getting technical leadership to trust an AI system speaking on the company's behalf.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
                 <h4>Guidance</h4>
-                <p>Process selection + constraints + trade-offs in clear, buyer-friendly language.</p>
+                <p>Process selection, constraints, and trade-offs explained in clear, buyer-friendly language rather than a static form.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
                 <h4>Knowledge</h4>
-                <p>Retrieval anchored on company capabilities, tolerances, materials, and past projects.</p>
+                <p>Retrieval anchored on the client's actual capabilities, tolerances, materials, and past project precedent.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
-                <h4>RFQ capture</h4>
-                <p>Structured intake and summarization for fast sales engineering review.</p>
+                <h4>RFQ Capture</h4>
+                <p>Structured intake and summarization, ready for fast sales engineering review the moment it arrives.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how a buyer's feasibility question becomes a CRM-ready RFQ, with an automated guardrail check ensuring every recommendation stays inside the client's validated capability envelope.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Buyer Inquiry flows into Guided Feasibility Agent, then into Capability Knowledge Retrieval, then to an automated Correctness Guardrail checkpoint, then to RFQ Summarization, then to a CRM-Ready Record. An Inquiry and Conversion log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Inquiry-to-RFQ Flow</p>
+                <p class="arch-diagram-note">Five stages · one automated correctness checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Buyer Inquiry</strong>
+                  <p>Feasibility questions on process selection, geometry, and material trade-offs, captured conversationally</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13.5a7.7 7.7 0 0 0 0-3l1.6-1.2-1.6-2.7-1.9.6a7.6 7.6 0 0 0-2.6-1.5L14.5 3h-3l-.4 2.7a7.6 7.6 0 0 0-2.6 1.5l-1.9-.6-1.6 2.7 1.6 1.2a7.7 7.7 0 0 0 0 3l-1.6 1.2 1.6 2.7 1.9-.6a7.6 7.6 0 0 0 2.6 1.5l.4 2.7h3l.4-2.7a7.6 7.6 0 0 0 2.6-1.5l1.9.6 1.6-2.7z"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Reasoning Layer</span>
+                  <strong>Guided Feasibility Agent</strong>
+                  <p>LLM agent with tool orchestration for process recommendations and trade-off explanation</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Knowledge Layer</span>
+                  <strong>Capability Knowledge Retrieval</strong>
+                  <p>Curated retrieval over the client's real capabilities, tolerances, materials, and project precedent</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Guardrail Gate</span>
+                  <strong>Correctness Guardrail</strong>
+                  <p>Recommendations outside the validated capability envelope are flagged, not guessed, and routed for review</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.5 14.5l1.8 1.8L15 12.5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>CRM-Ready RFQ Record</strong>
+                  <p>Structured summary mapped directly to CRM fields, ready for immediate sales engineering review</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Inquiry &amp; conversion log</strong> runs beneath every stage — every feasibility question, recommendation, and RFQ outcome is recorded and reviewable.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory correctness checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
               <li>LLM agent with tool orchestration for capability lookup, process recommendations, and RFQ summarization.</li>
-              <li>Curated knowledge base indexed for retrieval (processes, tolerances, materials, constraints).</li>
-              <li>Frontend web chat interface backed by a scalable API layer.</li>
-              <li>Outputs mapped to standardized CRM/RFQ fields for consistent lead qualification.</li>
+              <li>Curated knowledge base indexed for retrieval across processes, tolerances, materials, and constraints.</li>
+              <li>Frontend web chat interface backed by a scalable API layer built for production traffic.</li>
+              <li>Outputs mapped to standardized CRM/RFQ fields for consistent lead qualification across every sales engineer.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">58%</span><span class="lbl">Reduction in RFQ turnaround time</span></div>
+              <div class="metric"><span class="num">3.1x</span><span class="lbl">Increase in complete-on-first-submission RFQs</span></div>
+              <div class="metric"><span class="num">4.9x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">6 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Improved inquiry quality by capturing complete requirements in one session.</li>
-              <li>Reduced repetitive engineering time on early-stage education and feasibility questions.</li>
-              <li>Higher conversion by providing interactive guidance instead of static forms.</li>
+              <li>Cut RFQ turnaround time by 58% by capturing complete, structured requirements in a single guided session instead of multiple email cycles.</li>
+              <li>Increased complete-on-first-submission RFQs by 3.1x, eliminating most of the manual back-and-forth previously required to assemble a quote-ready inquiry.</li>
+              <li>Freed an estimated 11 hours per week of senior sales engineering time previously spent on repetitive early-stage feasibility screening.</li>
+              <li>Delivered a fully costed ROI model presented to the executive team: total program investment recovered in approximately 6 weeks of production use, driven by sales engineering time reclaimed and higher conversion, with a 4.9x return in year one.</li>
+              <li>Improved technical-inquiry conversion by replacing a static form with a guided, premium intake experience that kept buyers engaged instead of bouncing.</li>
+              <li>Gave sales leadership a standardized qualification bar for every inbound technical inquiry, regardless of which engineer eventually handled it.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Designed the knowledge representation, built the agent orchestration and tools, integrated into the website, and tuned the experience based on real user transcripts.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML product leader, operating at CTO scope: I built the business case and ROI model presented to the executive team, defined the buyer journey and knowledge representation, and set the correctness guardrails that kept the agent's recommendations bounded to the client's real, validated manufacturing capabilities.</p>
+            <p class="muted">I also owned the agent and integration architecture end-to-end, from the knowledge base design through CRM field mapping, and aligned sales engineering leadership on how edge cases would be routed for human review. The result was a scalable technical sales capability the client's leadership could trust with real buyer-facing conversations, not a chatbot experiment.</p>
           </section>
 
         </div>
@@ -295,7 +446,7 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
+    <span>© 2026 Devesh Srivastava.</span>
     <span>Secure by Architecture, Not by Patch.</span>
   </div>
 </footer>

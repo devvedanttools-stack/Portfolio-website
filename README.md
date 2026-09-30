@@ -3,7 +3,7 @@
 This is a single-file portfolio site designed for executive and research audiences.
 
 ## Local preview
-- Open `portfolio.html` directly in a browser, or
+- Open `index.html` directly in a browser, or
 - Use VS Code Live Server.
 
 ## Publish on GitHub Pages
@@ -13,7 +13,7 @@ This is a single-file portfolio site designed for executive and research audienc
 4. Branch: `main` (or `master`) and Folder: `/ (root)`
 
 ## Required edits before publishing
-- In `portfolio.html`, update `CONTACT_EMAIL` to your real email.
+- In `index.html`, update `CONTACT_EMAIL` to your real email.
 - Add `assets/favicon.ico` (optional) or remove the favicon link.
 
 ## Notes
