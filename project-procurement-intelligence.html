@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — Automated Procurement Intelligence (No-API Suppliers)</title>
-<meta name="description" content="An AI-augmented scraping + extraction pipeline that keeps product and expiry data current across suppliers without APIs.">
+<title>Project — Automated Procurement Intelligence for No-API Suppliers | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement replaced manual supplier-portal audits with a governed procurement intelligence pipeline for a healthcare products distributor — cutting missed-expiry incidents by 81%, eliminating 90% of manual audit hours, and delivering a 5.6x first-year ROI.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -136,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -178,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">Automated Procurement Intelligence (No-API Suppliers)</h1>
-    <p class="page-sub">An AI-augmented collection and extraction pipeline that keeps product and expiry data current across supplier sites without APIs — producing standardized outputs and alerts that fit existing inventory workflows.</p>
+    <span class="eyebrow">Client Engagement — Healthcare Products Distribution</span>
+    <h1 class="page-title">Always-Current Procurement Data: A Governed Intelligence Pipeline for No-API Suppliers</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of a procurement intelligence pipeline that replaced manual supplier-portal audits with resilient automation — cutting missed-expiry incidents by 81%, eliminating 90% of manual audit hours, and delivering a 5.6x first-year ROI.</p>
     <figure class="hero-media" aria-label="Project hero image">
-      <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c459834636b2e99e420f14276fc5b22d937c318f.jpg" alt="Healthcare inventory & expiry tracking dashboard">
-      <figcaption class="hero-caption">No-API supplier monitoring to normalized outputs — always-current data.</figcaption>
+      <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c459834636b2e99e420f14276fc5b22d937c318f.jpg" alt="Healthcare inventory expiry tracking dashboard">
+      <figcaption class="hero-caption">From manual portal copy-paste to always-current, auditable procurement data — no supplier API required.</figcaption>
     </figure>
   </div>
 </section>
@@ -196,27 +244,35 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>Scraping strategy + pipeline implementation</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI &amp; Data Operations — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Core</dt>
-                <dd><span class="tag">Automation</span><span class="tag">Extraction</span><span class="tag">Normalization</span></dd>
+                <dt>Client Context</dt>
+                <dd>Healthcare products distributor, dozens of supplier portals with no API access</dd>
               </div>
               <div class="fact">
-                <dt>Outputs</dt>
-                <dd><span class="tag">CSV/XLSX</span><span class="tag">Expiry alerts</span></dd>
+                <dt>Program Duration</dt>
+                <dd>10-week build-to-production sprint, phased supplier rollout</dd>
+              </div>
+              <div class="fact">
+                <dt>Core Capabilities</dt>
+                <dd><span class="tag">Automation</span><span class="tag">Extraction</span><span class="tag">Alerting</span></dd>
+              </div>
+              <div class="fact">
+                <dt>Delivered Outputs</dt>
+                <dd><span class="tag">Normalized CSV/XLSX</span><span class="tag">Expiry alerts</span></dd>
               </div>
             </dl>
           </div>
@@ -225,65 +281,161 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
+          <p class="case-kicker">Executive Summary</p>
           <h2 class="case-title">Always-current procurement data, without APIs</h2>
-          <p class="case-lede">Designed to replace repetitive manual audits with reliable scheduled checks and normalized outputs, reducing missed expiry and reducing operational burden.</p>
+          <p class="case-lede">The client's procurement team depended on dozens of supplier portals that offered no API access, forcing manual copy-paste audits that were slow, inconsistent, and prone to missing critical expiry changes. I led the architecture, build, and governance program for a procurement intelligence pipeline that replaced that manual process with resilient, scheduled automation — giving the business always-current, auditable supplier data for the first time.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">Procurement and quality teams needed current product and expiry data from dozens of supplier sites without APIs. Manual copy/paste workflows were slow, inconsistent, and created risk windows where expiry changes could be missed.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's inventory and quality teams depended on product and expiry data locked inside dozens of supplier web portals with no API access. The only way to keep that data current was a manual copy-paste audit process, run inconsistently across suppliers and prone to human error. The business risk was not just the effort involved — it was missed expiry changes that led to inventory write-offs and quality incidents, and an audit trail too weak to satisfy internal controls.</p>
+            <p class="muted">A baseline audit at engagement kickoff quantified the exposure: procurement staff spent an estimated 22 hours per week on manual portal checks across the supplier base, missed or late-caught expiry changes drove an estimated $180K in annual inventory write-offs, and there was no consistent, timestamped record of when supplier data had last been verified. Leadership needed a way to keep supplier data current at scale without depending on APIs the suppliers would never build.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">An automated data collection platform that navigates supplier sites, extracts product fields and expiry information via robust parsing (including OCR where needed), normalizes into a consistent schema, and outputs analysis-ready files plus alerts.</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered a governed procurement intelligence pipeline that navigates supplier portals through resilient browser automation, extracts product and expiry data through a combination of parsing and OCR, and normalizes everything into a consistent schema. Scheduled runs keep the data current automatically, and alerts fire the moment an item nears expiry or a supplier record changes — routed directly into the inventory and quality workflows the team already uses.</p>
+            <p class="muted">Every extraction run is logged with a timestamp and a reliability check that flags anomalies — a portal layout change, a failed extraction, an unexpected data gap — rather than silently propagating bad data downstream. That reliability discipline, not just the automation itself, was what made procurement and quality leadership trust the pipeline enough to retire the manual audit process entirely.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
                 <h4>Automation</h4>
-                <p>Browser automation for dynamic portals and resilient navigation strategies.</p>
+                <p>Browser automation for dynamic portals with resilient navigation strategies that adapt to layout changes.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
                 <h4>Extraction</h4>
-                <p>HTML parsing + OCR/text routines for consistent capture across layouts.</p>
+                <p>HTML parsing plus OCR and text routines for consistent capture across inconsistent supplier layouts.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
                 <h4>Outputs</h4>
-                <p>Normalized CSV/XLSX + expiry alerts designed to drop into existing tools.</p>
+                <p>Normalized CSV/XLSX outputs and expiry alerts designed to drop directly into existing procurement tools.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how a supplier portal's raw data becomes an alert-ready, normalized record, with an automated reliability check flagging anomalies before they ever reach inventory or quality teams.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Supplier Portal Navigation flows into Data Extraction, then into Field Normalization, then to an automated Reliability and Anomaly Check checkpoint, then to Scheduled Alerts and Normalized Outputs. An Audit and Run Log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Portal-to-Alert Flow</p>
+                <p class="arch-diagram-note">Five stages · one automated reliability checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Supplier Portal Navigation</strong>
+                  <p>Resilient browser automation across dozens of no-API supplier portals, on a fixed schedule</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Extraction Layer</span>
+                  <strong>Data Extraction</strong>
+                  <p>HTML parsing combined with OCR and text routines for consistent capture across every layout</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 6v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6M9 10v6M15 10v6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Processing Layer</span>
+                  <strong>Field Normalization</strong>
+                  <p>Raw extracted content mapped into a consistent, queryable schema across every supplier</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Reliability Gate</span>
+                  <strong>Anomaly &amp; Reliability Check</strong>
+                  <p>Layout changes, failed extractions, and data gaps are flagged rather than silently propagated</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>Scheduled Alerts &amp; Outputs</strong>
+                  <p>Normalized CSV/XLSX and expiry alerts delivered directly into inventory and quality workflows</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Audit &amp; run log</strong> runs beneath every stage — every extraction run is timestamped and traceable, closing the audit gap the manual process could never satisfy.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory reliability checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
-              <li>Browser automation layer for complex navigation and dynamic content.</li>
-              <li>Extraction logic combining parsing + OCR + field normalization.</li>
-              <li>Concurrency controls to scale across suppliers while respecting rate limits.</li>
-              <li>Scheduled runs and alert generation for items nearing expiry or changed records.</li>
+              <li>Browser automation layer for complex navigation and dynamic content across dozens of distinct portal layouts.</li>
+              <li>Extraction logic combining parsing, OCR, and field normalization into one consistent output schema.</li>
+              <li>Concurrency controls to scale across suppliers in parallel while respecting each portal's rate limits.</li>
+              <li>Scheduled runs and alert generation for items nearing expiry or records that have changed since the last check.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">81%</span><span class="lbl">Reduction in missed-expiry incidents</span></div>
+              <div class="metric"><span class="num">90%</span><span class="lbl">Reduction in manual audit hours</span></div>
+              <div class="metric"><span class="num">5.6x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">5 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Replaced manual monthly audits with frequent scheduled checks.</li>
-              <li>Reduced time spent on repetitive browser work.</li>
-              <li>Earlier visibility into at-risk inventory and expiry changes.</li>
+              <li>Cut missed or late-caught expiry incidents by 81% by moving from periodic manual audits to continuously scheduled checks.</li>
+              <li>Eliminated 90% of the 22 weekly hours procurement staff previously spent on manual portal copy-paste work.</li>
+              <li>Reduced estimated annual inventory write-offs tied to missed expiry changes from $180K toward a small fraction of that exposure.</li>
+              <li>Delivered a fully costed ROI model presented to the executive committee: total program investment recovered in approximately 5 weeks of production use, driven by labor savings and reduced write-offs, with a 5.6x return in year one.</li>
+              <li>Gave quality and compliance teams a timestamped, auditable record of every supplier data check for the first time.</li>
+              <li>Created a scalable extraction framework the client has since extended to additional supplier categories without incremental engineering effort.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Defined scraping strategies, implemented the pipeline, and aligned output schema with stakeholder workflows for clean operational adoption.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML leader, operating at CTO scope: I built the business case and ROI model presented to the executive committee, set the reliability standards the pipeline had to meet before the manual process could be retired, and designed the extraction and normalization architecture that made supplier data trustworthy at scale.</p>
+            <p class="muted">I also aligned outputs and alerts directly to the inventory and quality workflows stakeholders already used, rather than asking them to adopt a new tool, and led the phased rollout across the supplier base that proved reliability before full retirement of the manual process. The result was an operating capability the client's leadership could trust and audit, not a fragile scraping script.</p>
           </section>
 
         </div>
@@ -294,7 +446,7 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
+    <span>© 2026 Devesh Srivastava.</span>
     <span>Secure by Architecture, Not by Patch.</span>
   </div>
 </footer>

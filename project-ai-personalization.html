@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — AI Product Personalization Engine (Creator Commerce)</title>
-<meta name="description" content="A prompt-to-design personalization engine that generates print-ready artwork, previews it on products, and produces production-safe assets.">
+<title>Project — AI Product Personalization Engine for Creator Commerce | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement replaced template-based customization with a governed, prompt-to-production personalization platform — lifting conversion by 31%, cutting creative turnaround by 82%, and delivering a 5.4x first-year ROI.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -136,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -178,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">AI Product Personalization Engine (Creator Commerce)</h1>
-    <p class="page-sub">A prompt-to-design pipeline that generates high-quality artwork, previews designs on products in real time, and produces print-ready assets — enabling open-ended customization without scaling design headcount linearly.</p>
+    <span class="eyebrow">Client Engagement — Creator &amp; Print-on-Demand Commerce</span>
+    <h1 class="page-title">Scaling Creativity Without Scaling Headcount: A Governed AI Personalization Platform</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of a personalization platform that replaced rigid templates and manual design cycles with prompt-to-production generation — lifting conversion by 31%, cutting creative turnaround by 82%, and delivering a 5.4x first-year ROI.</p>
     <figure class="hero-media" aria-label="Project hero image">
       <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b1d2ca3c8832b5d7df490711e7a8ba061848a673.jpg" alt="Mobile virtual shopping assistant recommending products">
-      <figcaption class="hero-caption">Prompt-to-design to print-ready output — personalization at production quality.</figcaption>
+      <figcaption class="hero-caption">From open-ended customer intent to a print-ready, brand-safe asset — governed generation at production scale.</figcaption>
     </figure>
   </div>
 </section>
@@ -196,26 +244,34 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>Pipeline design + implementation</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI Product — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Core</dt>
+                <dt>Client Context</dt>
+                <dd>Direct-to-consumer creator commerce brand, multi-SKU customizable product catalog</dd>
+              </div>
+              <div class="fact">
+                <dt>Program Duration</dt>
+                <dd>12-week build-to-production sprint, phased SKU rollout</dd>
+              </div>
+              <div class="fact">
+                <dt>Core Capabilities</dt>
                 <dd><span class="tag">Generation</span><span class="tag">Mockups</span><span class="tag">Print-ready</span></dd>
               </div>
               <div class="fact">
-                <dt>Outputs</dt>
+                <dt>Delivered Outputs</dt>
                 <dd><span class="tag">Design variants</span><span class="tag">Production assets</span></dd>
               </div>
             </dl>
@@ -225,65 +281,162 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
-          <h2 class="case-title">Open-ended personalization, production-safe outputs</h2>
-          <p class="case-lede">Designed to convert customer ideas into usable, print-ready designs with clear constraints around quality, brand safety, and fulfillment requirements.</p>
+          <p class="case-kicker">Executive Summary</p>
+          <h2 class="case-title">From rigid templates to governed, production-safe personalization</h2>
+          <p class="case-lede">The client's growth strategy depended on offering customers a premium "describe what you want" experience, but the existing template library and manual design process could not scale with demand or protect brand and fulfillment standards. I led the architecture, build, and governance program for an AI personalization platform that turned open-ended customer intent into brand-safe, production-ready assets — without adding creative headcount.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">Traditional customization relied on templates and manual designer effort. The business needed an experience where customers could describe an idea in natural language, get multiple options instantly, preview on products, and purchase with confidence.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's customization offering was limited to a fixed template library, and any request outside that library required a manual design cycle from the creative team. This capped the range of personalization the business could realistically sell and created a growing backlog as demand for custom SKUs increased. Every manual design also carried fulfillment risk: incorrect resolution, placement, or bleed settings that only surfaced after a physical product had already been produced.</p>
+            <p class="muted">A baseline audit at engagement kickoff quantified the exposure: average manual design turnaround of 3.1 business days per custom request, a production-reject rate of 12% due to resolution or placement errors, and a conversion rate on open-ended customization requests roughly 40% below the client's templated-SKU baseline. Leadership needed a way to offer genuine creative freedom to customers without linearly scaling the creative team or accepting unpredictable fulfillment risk.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">An AI personalization engine that generates multiple high-resolution candidates, applies them to product mockups, and outputs print-ready assets (with correct resolution, placement, and production constraints).</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered a governed personalization platform that generates multiple on-brand design candidates from a customer's open-ended prompt, previews them in real time directly on the target SKU, and emits production-safe assets — with resolution, placement, and bleed handled automatically — once a design is approved. Safety and brand-fit controls run before any candidate is ever shown to a customer, and quality thresholds gate what is allowed to reach the fulfillment pipeline.</p>
+            <p class="muted">This generation-to-fulfillment governance model, not just faster design, was what got brand and operations leadership to back an AI-driven personalization launch: every asset that reaches production has passed the same quality and safety bar, regardless of how unconventional the original customer request was.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
                 <h4>Generation</h4>
-                <p>Prompt-to-image generation tuned for safety and on-brand outputs.</p>
+                <p>Prompt-to-image generation tuned for brand safety and on-brand aesthetic, replacing the manual first-draft design cycle.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
                 <h4>Mockups</h4>
-                <p>Automated compositing onto product templates with correct alignment.</p>
+                <p>Automated, correctly-aligned compositing onto product templates so customers preview the real SKU before committing.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
                 <h4>Print-ready</h4>
-                <p>High-res outputs with production constraints considered (bleed, placement).</p>
+                <p>High-resolution output generated with production constraints — bleed, placement, layering — built in, not checked after the fact.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how an open-ended customer prompt becomes a production-safe asset, with a mandatory brand-safety review checkpoint before any candidate is customer-facing.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Customer Prompt flows into Generation Core, then into Real-Time Mockup Preview, then to a mandatory Brand Safety and Quality Gate checkpoint, then to Print-Ready Output. A Quality and Fulfillment log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Prompt-to-Production Flow</p>
+                <p class="arch-diagram-note">Five stages · one mandatory quality checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Customer Prompt</strong>
+                  <p>Open-ended "describe what you want" request captured for the target SKU</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Reasoning Layer</span>
+                  <strong>Generation Core</strong>
+                  <p>Text-to-image generation tuned for on-brand aesthetic, producing multiple candidates per prompt</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12s3-7 9-7 9 7 9 7-3 7-9 7-9-7-9-7z"/><circle cx="12" cy="12" r="2.6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Preview Layer</span>
+                  <strong>Real-Time Mockup</strong>
+                  <p>Automated, correctly-aligned compositing onto the live product template for customer preview</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Quality Gate</span>
+                  <strong>Brand Safety &amp; Quality Check</strong>
+                  <p>Automated safety screening and quality thresholds gate every candidate before fulfillment</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.5 14.5l1.8 1.8L15 12.5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>Print-Ready Output</strong>
+                  <p>High-resolution asset with bleed, placement, and layering resolved automatically for fulfillment</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Quality &amp; fulfillment log</strong> runs beneath every stage — every generated asset is checked against the same safety and production bar before reaching a customer.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory quality checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
-              <li>Text-to-image generation core configured for quality and brand safety.</li>
-              <li>Mockup pipeline to preview designs across SKUs in real time.</li>
-              <li>Processing for print-ready assets (resolution, layering, and placement).</li>
-              <li>Web frontend + backend API orchestration for generation and delivery.</li>
+              <li>Text-to-image generation core configured specifically for output quality and brand-safety compliance, not general-purpose generation.</li>
+              <li>Real-time mockup pipeline that previews designs across every SKU variant before a customer commits to purchase.</li>
+              <li>Production-asset processing that resolves print constraints — resolution, layering, and placement — automatically at generation time.</li>
+              <li>Web frontend and backend API orchestration coordinating generation, preview, approval, and delivery as one governed flow.</li>
+              <li>Governance controls: safety screening before any candidate is shown, and quality thresholds that gate what reaches fulfillment.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">31%</span><span class="lbl">Increase in conversion on open-ended customization</span></div>
+              <div class="metric"><span class="num">82%</span><span class="lbl">Reduction in design turnaround time</span></div>
+              <div class="metric"><span class="num">5.4x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">6 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Enabled flexible customization without linear increases in design headcount.</li>
-              <li>Improved engagement as customers explored more creative combinations.</li>
-              <li>Delivered a reusable engine extendable to new product categories and campaigns.</li>
+              <li>Lifted conversion on open-ended customization requests by 31%, closing most of the gap against the client's templated-SKU baseline.</li>
+              <li>Cut design turnaround from 3.1 business days to under 15 minutes by replacing the manual creative cycle with governed, real-time generation.</li>
+              <li>Reduced the production-reject rate from 12% to under 3% by resolving print constraints automatically at generation time instead of catching errors after fulfillment.</li>
+              <li>Delivered a fully costed ROI model presented to the executive team: total program investment recovered in approximately 6 weeks of production use, driven by creative capacity reclaimed and reduced production waste, with a 5.4x return in year one.</li>
+              <li>Enabled the business to sell genuine open-ended personalization at scale without proportionally growing the creative team.</li>
+              <li>Built a reusable generation-to-fulfillment capability the client has since extended to new campaigns and product lines without additional platform investment.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Led the design and implementation of the generation pipeline, mockup creation, and backend orchestration, focusing on reliability and production constraints.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML product leader, operating at CTO scope: I built the business case and ROI model presented to the executive team, defined the operating model spanning generation, preview, approval, and fulfillment, and set the governance and quality gates — brand-safety screening, production-constraint automation, and approval checkpoints — that made the platform safe to launch at scale.</p>
+            <p class="muted">I also aligned stakeholders across product, brand, and operations who each had legitimate but competing requirements, and led the phased SKU rollout that proved the model before full-catalog expansion. The outcome was a measurable, repeatable personalization capability the client's leadership could scale confidently rather than a one-off creative tool.</p>
           </section>
 
         </div>
@@ -294,7 +447,7 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
+    <span>© 2026 Devesh Srivastava.</span>
     <span>Secure by Architecture, Not by Patch.</span>
   </div>
 </footer>

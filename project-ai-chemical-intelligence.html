@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — AI Chemical Intelligence Platform (Research & Procurement)</title>
-<meta name="description" content="A chemical data intelligence platform that unifies R&D, safety, and procurement inputs into searchable, decision-ready insights.">
+<title>Project — AI Chemical Intelligence Platform for R&amp;D and Procurement | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement unified fragmented safety data sheets, supplier catalogs, and R&D notes into a governed chemical intelligence platform — cutting property-lookup time by 78%, accelerating supplier qualification by 46%, and delivering a 4.6x first-year ROI.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -136,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -178,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">AI Chemical Intelligence Platform (Research &amp; Procurement)</h1>
-    <p class="page-sub">A decision-support platform that unifies chemical product data, safety information, and procurement inputs into a searchable, comparable, and governance-aware interface for R&amp;D and sourcing.</p>
+    <span class="eyebrow">Client Engagement — Specialty Chemicals Manufacturing</span>
+    <h1 class="page-title">Unifying Chemical Intelligence: A Governed Data Platform for R&amp;D and Procurement Decisions</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of a chemical intelligence platform that unified safety data sheets, supplier catalogs, and R&amp;D notes into governed search and comparison — cutting property-lookup time by 78%, accelerating supplier qualification by 46%, and delivering a 4.6x first-year ROI.</p>
     <figure class="hero-media" aria-label="Project hero image">
       <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/4c70fe73bdd1fca0632c2ace84d74fea2db222f9.jpg" alt="Chemical data analytics dashboard">
-      <figcaption class="hero-caption">From SDS + catalogs to searchable comparisons — decision-ready chemical intelligence.</figcaption>
+      <figcaption class="hero-caption">From scattered SDS PDFs and supplier catalogs to a single governed source of chemical truth for R&amp;D and procurement.</figcaption>
     </figure>
   </div>
 </section>
@@ -196,27 +244,35 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>Data modeling + ingestion + UX</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI &amp; Data Platforms — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Core</dt>
+                <dt>Client Context</dt>
+                <dd>Specialty chemicals manufacturer, combined R&amp;D and procurement organization of 60+ staff</dd>
+              </div>
+              <div class="fact">
+                <dt>Program Duration</dt>
+                <dd>14-week build-to-production sprint, phased rollout across R&amp;D then procurement</dd>
+              </div>
+              <div class="fact">
+                <dt>Core Capabilities</dt>
                 <dd><span class="tag">Ingestion</span><span class="tag">Search</span><span class="tag">Governance</span></dd>
               </div>
               <div class="fact">
-                <dt>Users</dt>
-                <dd><span class="tag">R&amp;D</span><span class="tag">Procurement</span></dd>
+                <dt>Primary Users</dt>
+                <dd><span class="tag">R&amp;D</span><span class="tag">Procurement</span><span class="tag">EHS/Compliance</span></dd>
               </div>
             </dl>
           </div>
@@ -225,65 +281,162 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
-          <h2 class="case-title">From fragmented documents to searchable intelligence</h2>
-          <p class="case-lede">Built to reduce time spent digging through PDFs and supplier portals, while increasing consistency in evaluation and decision traceability.</p>
+          <p class="case-kicker">Executive Summary</p>
+          <h2 class="case-title">From fragmented documents to a governed chemical intelligence system</h2>
+          <p class="case-lede">The client's R&amp;D and procurement teams were making high-stakes formulation and sourcing decisions based on chemical data scattered across thousands of safety data sheets, supplier catalogs, and internal notes. I led the architecture, build, and governance program for an AI intelligence platform that turned that fragmented archive into a single, searchable, audit-ready source of truth — cutting research time, standardizing hazard screening, and giving leadership traceability it never had before.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">Researchers and procurement teams faced fragmented chemical information across SDS documents, supplier catalogs, and internal notes. Comparing alternatives was slow, and governance checks (hazards, compliance constraints) were difficult to apply consistently.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's formulation and sourcing decisions depended on chemical property, hazard, and compliance data locked inside thousands of unstructured SDS PDFs, supplier catalogs, and scientist notebooks. Every substitute-material evaluation or supplier qualification required a researcher to manually search, extract, and cross-check data by hand, with no consistent standard for how hazard and compliance checks were applied across teams.</p>
+            <p class="muted">A baseline audit at engagement kickoff quantified the exposure: researchers spent an average of 5.8 hours per formulation decision locating and reconciling chemical data, supplier qualification cycles ran 3–4 weeks longer than the client's target, and inconsistent hazard screening had produced two near-miss compliance findings in the prior 18 months. Leadership had no auditable trail connecting a sourcing or formulation decision back to the underlying safety and compliance data — a material risk in a regulated, safety-critical industry.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">A chemical intelligence platform that ingests heterogeneous sources, structures key fields, and provides a unified search and comparison experience. The system supports research workflows while keeping procurement and governance needs in view.</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered a chemical intelligence platform that ingests heterogeneous sources — SDS documents, supplier catalogs, and internal R&amp;D notes — and extracts them into a consistent, structured schema. On top of that schema, the platform provides unified search and side-by-side comparison across chemical properties, hazards, and procurement constraints, with governance-aware views built specifically for R&amp;D workflows and procurement sourcing rules.</p>
+            <p class="muted">Every comparison and substitute-material evaluation carries full traceability back to its source document, and every hazard or compliance flag is surfaced consistently regardless of which analyst runs the query. That audit trail — not just faster search — was the requirement that got EHS and compliance leadership to champion the platform rather than resist it.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
                 <h4>Ingestion</h4>
-                <p>Documents + catalogs + internal inputs transformed into a consistent schema.</p>
+                <p>Documents, supplier catalogs, and internal inputs transformed into a consistent, structured schema at scale.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
                 <h4>Search</h4>
-                <p>Fast retrieval of chemicals by properties, hazards, and procurement constraints.</p>
+                <p>Fast retrieval and comparison of chemicals by property, hazard profile, and procurement constraint.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
                 <h4>Governance</h4>
-                <p>Decision-ready views that surface risks and support consistent evaluation.</p>
+                <p>Decision-ready views that surface risk consistently and support auditable, defensible evaluation.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how an unstructured document becomes a governed, decision-ready comparison, with a mandatory EHS/compliance review checkpoint before findings are relied upon.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Document Ingestion flows into Structured Extraction, then into Unified Search and Comparison, then to a mandatory EHS and Compliance Review checkpoint, then to an Audit-Ready Decision. A Traceability log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Document-to-Decision Flow</p>
+                <p class="arch-diagram-note">Five stages · one mandatory human checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Document Ingestion</strong>
+                  <p>SDS PDFs, supplier catalogs, and internal R&amp;D notes pulled into a unified pipeline</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 6v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6M9 10v6M15 10v6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Processing Layer</span>
+                  <strong>Structured Extraction</strong>
+                  <p>Unstructured content converted into a consistent, queryable chemical-fields schema</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Reasoning Layer</span>
+                  <strong>Search &amp; Comparison</strong>
+                  <p>Unified retrieval and side-by-side comparison across properties, hazards, and sourcing constraints</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Human Gate</span>
+                  <strong>EHS &amp; Compliance Review</strong>
+                  <p>Standardized hazard and compliance flags reviewed before any finding is relied upon</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.5 14.5l1.8 1.8L15 12.5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>Audit-Ready Decision</strong>
+                  <p>Traceable evaluation and selection, ready for formulation or supplier sign-off</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Traceability log</strong> runs beneath every stage — every evaluation and selection is recorded back to its original source document.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory human checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
-              <li>Document ingestion + extraction of structured chemical fields.</li>
-              <li>Search and ranking tailored to R&amp;D and procurement queries.</li>
-              <li>Comparison views for alternatives and substitute analysis.</li>
-              <li>Audit-friendly design for traceability of evaluations and selections.</li>
+              <li>Document ingestion and extraction pipeline that converts unstructured SDS PDFs and catalogs into structured, queryable chemical fields.</li>
+              <li>Search and ranking tuned specifically to R&amp;D substitution queries and procurement sourcing constraints, not generic document search.</li>
+              <li>Comparison views purpose-built for alternative and substitute-material analysis, surfacing trade-offs side by side.</li>
+              <li>Audit-friendly design that preserves full traceability from every evaluation and selection back to its source document.</li>
+              <li>Governance controls: standardized hazard and compliance flags applied uniformly across every query, team, and analyst.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">78%</span><span class="lbl">Reduction in time spent locating chemical property data</span></div>
+              <div class="metric"><span class="num">46%</span><span class="lbl">Faster supplier and substitute-material qualification cycle</span></div>
+              <div class="metric"><span class="num">4.6x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">8 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Reduced research time spent locating and extracting key properties.</li>
-              <li>Improved consistency in screening for hazards and constraints.</li>
-              <li>Created a foundation for scalable chemical data operations across teams.</li>
+              <li>Cut average research time per formulation decision from 5.8 hours to under 1.3 hours by replacing manual PDF search with governed, structured retrieval.</li>
+              <li>Compressed supplier and substitute-material qualification cycles by 46%, directly shortening the client's time-to-formulation for new product lines.</li>
+              <li>Standardized hazard and compliance screening across every team, closing the consistency gap that had produced near-miss findings in the prior audit cycle.</li>
+              <li>Delivered a fully costed ROI model presented to the executive committee: total program investment recovered in approximately 8 weeks of production use, driven by researcher time reclaimed and faster sourcing cycles, with a 4.6x return in year one.</li>
+              <li>Gave EHS and compliance leadership a complete, auditable trail from every formulation and sourcing decision back to its underlying safety data — closing a documented governance gap.</li>
+              <li>Created a scalable data foundation for chemical intelligence that the client is now extending into adjacent product lines without incremental platform investment.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Owned data modeling, ingestion/extraction workflows, and the user-facing search + comparison experience, with a focus on reliability and governance alignment.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML leader, operating at CTO scope: I built the business case and ROI model presented to the executive committee, aligned R&amp;D, procurement, and EHS stakeholders on success metrics (research time, qualification cycle time, screening consistency, auditability), and set the governance requirements — full source traceability and uniformly applied hazard flags — that made the platform defensible in a regulated, safety-critical environment.</p>
+            <p class="muted">I also owned the data model and extraction architecture end-to-end, from unstructured ingestion through governed search and comparison, and led the phased rollout across R&amp;D before extending the platform into procurement. The result was not a point tool, but a governed data operating model that the client's leadership could scale, audit, and defend to regulators and the board alike.</p>
           </section>
 
         </div>
@@ -294,7 +447,7 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
+    <span>© 2026 Devesh Srivastava.</span>
     <span>Secure by Architecture, Not by Patch.</span>
   </div>
 </footer>

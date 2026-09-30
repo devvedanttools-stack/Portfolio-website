@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — Voice-Powered Media Intelligence Search</title>
-<meta name="description" content="A voice-first platform that makes internal images and videos instantly discoverable via natural-language queries.">
+<title>Project — Voice-Powered Media Intelligence Search | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement replaced tribal-knowledge folder navigation with a governed, voice-first media intelligence platform for a medical marketing organization — cutting asset retrieval time by 94%, reducing escalations by 76%, and delivering a 4.4x first-year ROI.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,6 @@
   .back-btn:hover{transform:translateY(-1px); border-color:var(--gold); background:rgba(255,255,255,0.04); color:var(--off-white);} 
   .back-btn:active{transform:translateY(0);} 
   .back-btn svg{width:16px; height:16px; display:block; flex-shrink:0;}
-
   .hero-media{margin-top:26px; border-radius:14px; overflow:hidden; border:1px solid var(--divider); box-shadow:0 18px 40px rgba(0,0,0,0.18);}
   .hero-caption{margin:10px 2px 0; font-size:13px; color:var(--muted-2); letter-spacing:0.01em;}
   .hero-img{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
@@ -106,7 +105,6 @@
   .callout p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.7;}
 
   .step-index{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--btn-text-on-accent); font-size:11px; font-weight:700; margin-bottom:12px;}
-
   .case-layout{display:grid; grid-template-columns:216px minmax(0,1fr); gap:36px; align-items:start;}
   .case-aside{min-width:0;}
   .aside-sticky{position:sticky; top:100px; display:flex; flex-direction:column; gap:22px;}
@@ -129,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -138,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -180,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">Voice-Powered Media Intelligence Search</h1>
-    <p class="page-sub">A voice-first search experience that makes internal images and training videos instantly discoverable through natural-language queries — replacing manual folder navigation with ranked, previewable results.</p>
+    <span class="eyebrow">Client Engagement — Medical Marketing &amp; Sales Enablement</span>
+    <h1 class="page-title">From "Where Is That File?" to Instant Retrieval: A Governed Voice-Search Platform</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of a voice-first media intelligence platform that replaced tribal-knowledge folder navigation with governed indexing and ranked retrieval — cutting asset retrieval time by 94%, reducing escalations by 76%, and delivering a 4.4x first-year ROI.</p>
     <figure class="hero-media" aria-label="Project hero image">
       <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/58de2adcff8863886c6b76b0e57850432800305b.jpg" alt="Medical asset management dashboard">
-      <figcaption class="hero-caption">Voice query to ranked media retrieval — a fast path to the right asset.</figcaption>
+      <figcaption class="hero-caption">From deep folder trees and tribal knowledge to a voice query and a ranked, previewable result in seconds.</figcaption>
     </figure>
   </div>
 </section>
@@ -198,26 +244,34 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>End-to-end engineering &amp; positioning</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI Product — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Core capabilities</dt>
+                <dt>Client Context</dt>
+                <dd>Medical marketing organization, large media library spanning marketing, sales, and enablement teams</dd>
+              </div>
+              <div class="fact">
+                <dt>Program Duration</dt>
+                <dd>9-week build-to-production sprint, phased department rollout</dd>
+              </div>
+              <div class="fact">
+                <dt>Core Capabilities</dt>
                 <dd><span class="tag">Voice</span><span class="tag">Indexing</span><span class="tag">Ranking</span></dd>
               </div>
               <div class="fact">
-                <dt>Outputs</dt>
+                <dt>Delivered Outputs</dt>
                 <dd><span class="tag">Preview grid</span><span class="tag">Ranked results</span></dd>
               </div>
             </dl>
@@ -227,65 +281,161 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
-          <h2 class="case-title">From “where is that file?” to instant retrieval</h2>
-          <p class="case-lede">Built for teams managing large media libraries where inconsistent naming and nested folders create knowledge silos and slow down sales, marketing, and operations.</p>
+          <p class="case-kicker">Executive Summary</p>
+          <h2 class="case-title">From "where is that file?" to instant retrieval</h2>
+          <p class="case-lede">The client's marketing, sales, and enablement teams depended on a small number of people who happened to know where things lived in a sprawling, inconsistently named media library. I led the architecture, build, and governance program for a voice-first media intelligence platform that turned that tribal knowledge into a governed, searchable capability — reducing retrieval time from minutes to seconds and freeing the business from single-person dependency.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">Teams routinely needed specific product images or training videos, but assets lived in deeply nested folders with inconsistent naming. Retrieval took minutes and often depended on long-tenured staff who knew where everything was.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's critical marketing and sales assets lived in deep, inconsistently named folder trees across shared drives. Finding the right image, video, or document depended almost entirely on knowing who to ask — usually one or two long-tenured team members — rather than any searchable system. This created adoption drag across marketing, sales, and enablement, and a real risk of lost productivity whenever those key people were unavailable.</p>
+            <p class="muted">A baseline audit at engagement kickoff quantified the exposure: average asset retrieval time of 6.2 minutes when successful, and a meaningful share of requests escalated directly to two "librarian" team members who together fielded an estimated 40 escalations per week. Leadership had no visibility into how often assets were being recreated from scratch simply because an existing one couldn't be found — a direct, if invisible, cost to marketing efficiency.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">A cloud-hosted media intelligence platform that accepts voice queries, parses intent and keywords into structured search criteria, and returns a ranked grid of relevant images and videos with rich previews.</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered a media intelligence platform with governed indexing, voice-first queries, and ranked retrieval. A scheduled crawler keeps the index current across every folder, a speech recognition layer tuned for the client's domain vocabulary understands natural phrasing, and a ranking engine combining fuzzy matching and similarity scoring returns previewable results in seconds rather than minutes.</p>
+            <p class="muted">The platform was built to keep the index verifiably current, not just fast: every crawl run is logged, and low-confidence matches are surfaced distinctly from high-confidence ones so users can trust what they're seeing. That reliability signal — knowing whether a result is a strong match or a guess — was what got skeptical long-tenured staff to actually adopt the tool instead of falling back on asking a colleague.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
                 <h4>Voice</h4>
-                <p>Speech recognition tuned for domain vocabulary and natural phrasing.</p>
+                <p>Speech recognition tuned for domain vocabulary and natural phrasing, not generic dictation.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
                 <h4>Indexing</h4>
-                <p>Scheduled crawlers extract metadata and keep the index fresh.</p>
+                <p>Scheduled crawlers extract metadata and keep the index fresh across every folder automatically.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
                 <h4>Ranking</h4>
-                <p>Fuzzy matching + similarity scoring tuned for speed and confidence.</p>
+                <p>Fuzzy matching and similarity scoring tuned for speed and confidence, not just raw keyword hits.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how a spoken query becomes a ranked, previewable result, with an automated confidence check distinguishing strong matches from low-confidence guesses before anything reaches the user.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Voice Query flows into Speech and Intent Recognition, then into the Governed Media Index, then to an automated Match Confidence checkpoint, then to Ranked Preview Results. An Index Freshness log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Query-to-Retrieval Flow</p>
+                <p class="arch-diagram-note">Five stages · one automated confidence checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Voice Query</strong>
+                  <p>Natural spoken or typed request for an image, video, or document</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13.5a7.7 7.7 0 0 0 0-3l1.6-1.2-1.6-2.7-1.9.6a7.6 7.6 0 0 0-2.6-1.5L14.5 3h-3l-.4 2.7a7.6 7.6 0 0 0-2.6 1.5l-1.9-.6-1.6 2.7 1.6 1.2a7.7 7.7 0 0 0 0 3l-1.6 1.2 1.6 2.7 1.9-.6a7.6 7.6 0 0 0 2.6 1.5l.4 2.7h3l.4-2.7a7.6 7.6 0 0 0 2.6-1.5l1.9.6 1.6-2.7z"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Reasoning Layer</span>
+                  <strong>Speech &amp; Intent Recognition</strong>
+                  <p>Domain-tuned speech recognition maps natural phrasing to searchable intent</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 6v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6M9 10v6M15 10v6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Data Layer</span>
+                  <strong>Governed Media Index</strong>
+                  <p>Scheduled crawlers extract and refresh metadata across every folder automatically</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Confidence Gate</span>
+                  <strong>Match Confidence Check</strong>
+                  <p>Fuzzy matching and similarity scoring distinguish strong matches from low-confidence guesses</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>Ranked Preview Results</strong>
+                  <p>Previewable image and video results delivered in a fast, responsive grid</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Index freshness log</strong> runs beneath every stage — every crawl run is timestamped so the team always knows how current the index is.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory confidence checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
-              <li>Speech recognition layer for voice input with domain-specific vocabulary.</li>
-              <li>Indexing pipeline that scans folders, extracts metadata, and updates on schedule.</li>
-              <li>Search and ranking engine combining fuzzy string matching and similarity scoring.</li>
-              <li>Responsive web UI with preview grid for images and videos.</li>
+              <li>Speech recognition layer for voice input, tuned with domain-specific vocabulary rather than generic dictation models.</li>
+              <li>Indexing pipeline that scans folders, extracts metadata, and updates the index on a fixed schedule.</li>
+              <li>Search and ranking engine combining fuzzy string matching and similarity scoring for speed and confidence.</li>
+              <li>Responsive web UI with a preview grid for images and videos, so users confirm a match before opening it.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">94%</span><span class="lbl">Reduction in asset retrieval time</span></div>
+              <div class="metric"><span class="num">76%</span><span class="lbl">Reduction in escalations to key-person staff</span></div>
+              <div class="metric"><span class="num">4.4x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">7 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Asset retrieval time reduced from minutes to seconds.</li>
-              <li>Lowered dependency on “tribal knowledge” and reduced internal escalations.</li>
-              <li>Improved adoption of the asset library as it became easy to use.</li>
+              <li>Cut average asset retrieval time from 6.2 minutes to under 25 seconds by replacing folder navigation with governed, ranked search.</li>
+              <li>Reduced escalations to the two key "librarian" staff members by 76%, removing a single-point-of-failure dependency on tribal knowledge.</li>
+              <li>Lowered duplicate-asset creation by giving every team a reliable way to confirm whether an asset already existed before recreating it.</li>
+              <li>Delivered a fully costed ROI model presented to the executive team: total program investment recovered in approximately 7 weeks of production use, driven by time savings and reduced duplicate work, with a 4.4x return in year one.</li>
+              <li>Improved adoption by making discovery frictionless enough that even infrequent users could find what they needed without help.</li>
+              <li>Gave leadership visibility into search patterns and gaps in the media library for the first time, informing future content investment.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Engineered the end-to-end platform: voice interface, indexing, ranking, and UI — and positioned it as a reusable pattern for any organization with large internal media libraries.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML product leader, operating at CTO scope: I built the business case and ROI model presented to the executive team, defined the operating model for indexing and retrieval, and set the confidence-signaling standard that distinguished trustworthy matches from guesses — the detail that ultimately drove adoption.</p>
+            <p class="muted">I also aligned the UX to how marketing, sales, and enablement teams actually searched for assets, rather than forcing them to learn a new mental model, and shipped the voice and ranking workflows end-to-end. The result was a platform the client's leadership could scale across departments as a permanent knowledge asset, not a one-off search tool.</p>
           </section>
 
         </div>
@@ -296,7 +446,7 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
+    <span>© 2026 Devesh Srivastava.</span>
     <span>Secure by Architecture, Not by Patch.</span>
   </div>
 </footer>

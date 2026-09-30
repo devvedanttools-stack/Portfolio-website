@@ -217,11 +217,33 @@
   .callout h4{font-family:var(--font-body); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 8px; color:var(--muted-2); font-weight:700;}
   .callout p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.7;}
 
-  footer{
-    padding:36px 0;
+  footer.site-footer{
+    padding:56px 0;
     border-top:1px solid var(--divider);
-    font-size:13px;
+    background:linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.10) 100%);
     color:var(--muted-2);
+  }
+  html[data-theme="light"] footer.site-footer{
+    background:linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(15,24,38,0.04) 100%);
+  }
+  .footer-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:26px; align-items:start;}
+  .footer-brand{min-width:0;}
+  .footer-mark{font-family:var(--font-display); font-size:18px; letter-spacing:0.01em; color:var(--off-white); display:inline-flex; align-items:baseline; gap:2px;}
+  .footer-mark span{color:var(--gold);}
+  .footer-tagline{margin:10px 0 0; color:var(--muted); max-width:64ch; font-size:13.5px; line-height:1.6;}
+  .footer-links{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px 18px; justify-items:start;}
+  .footer-links a{font-size:13.5px; color:var(--muted); padding:6px 0; border-bottom:1px solid transparent; transition:color 0.2s ease, border-color 0.2s ease;}
+  .footer-links a:hover, .footer-links a:focus-visible{color:var(--off-white); border-bottom-color:var(--divider);}
+  .footer-meta{margin-top:28px; padding-top:18px; border-top:1px solid var(--divider); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12.5px; color:var(--muted-2);}
+  .footer-meta a{color:inherit; border-bottom:1px solid transparent;}
+  .footer-meta a:hover, .footer-meta a:focus-visible{color:var(--off-white); border-bottom-color:var(--divider);}
+  @media (max-width:820px){
+    .footer-inner{grid-template-columns:1fr;}
+    .footer-links{grid-template-columns:repeat(3, minmax(0,1fr));}
+  }
+  @media (max-width:560px){
+    footer.site-footer{padding:44px 0;}
+    .footer-links{grid-template-columns:repeat(2, minmax(0,1fr));}
   }
 
   body::after{
@@ -421,10 +443,29 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
-    <a href="./index.html" style="border-bottom:1px solid var(--divider); padding-bottom:2px;">Back to home</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-mark" href="./index.html#top" aria-label="Back to home">Devesh S<span>.</span></a>
+        <p class="footer-tagline">Secure by Architecture, Not by Patch — building AI systems and healthcare infrastructure leaders can trust.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#experience">Experience</a>
+        <a href="./index.html#featured">Featured</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./index.html#framework">Research &amp; Frameworks</a>
+        <a href="./index.html#recognition">Recognition</a>
+        <a href="./index.html#contact">Contact</a>
+        <a href="#top">Back to top</a>
+      </nav>
+    </div>
+
+    <div class="footer-meta" aria-label="Footer meta">
+      <span>© 2026 Devesh S.</span>
+      <span><a href="./index.html#contact">Get in touch</a> • <a href="#top">Top</a></span>
+    </div>
   </div>
 </footer>
 

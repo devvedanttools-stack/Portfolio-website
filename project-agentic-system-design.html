@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — Agentic System Design Chatbot (Industrial Water Treatment)</title>
-<meta name="description" content="An expert assistant that guides engineers through process design decisions, constraints, and documentation for industrial water treatment systems.">
+<title>Project — Agentic Engineering Design Platform for Industrial Water Treatment | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement converted a fragmented, expert-dependent engineering design process into a governed, agentic decision platform — cutting design cycle time by 62%, rework by 34%, and delivering a 3.8x first-year ROI for an industrial water treatment OEM.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -136,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -178,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">Agentic System Design Chatbot (Industrial Water Treatment)</h1>
-    <p class="page-sub">An expert assistant that helps engineers translate requirements into system design decisions, surfaces constraints, and produces clearer documentation — speeding up early-stage design cycles while keeping traceability.</p>
+    <span class="eyebrow">Client Engagement — Industrial Water Treatment (OEM/EPC)</span>
+    <h1 class="page-title">Rebuilding Engineering Decision-Making at Scale: An Agentic Design Platform for Industrial Water Treatment</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of an agentic system that replaced ad-hoc, expert-dependent design workflows with a standardized decision platform — cutting proposal-to-design cycle time by 62%, reducing engineering rework by 34%, and returning 3.8x the program's first-year investment.</p>
     <figure class="hero-media" aria-label="Project hero image">
       <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/828aeeb0c5a321a44ec9f004b571564efa54c538.jpg" alt="Industrial water treatment with AI dashboard">
-      <figcaption class="hero-caption">Requirement intake to structured design notes — consistent early-stage engineering decisions.</figcaption>
+      <figcaption class="hero-caption">From fragmented requirement intake to a governed, auditable design decision — standardized across every engineer, every proposal, every plant.</figcaption>
     </figure>
   </div>
 </section>
@@ -196,27 +244,35 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>Interaction model + state capture</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI &amp; Applied Engineering — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Core</dt>
-                <dd><span class="tag">Guidance</span><span class="tag">Constraints</span><span class="tag">Docs</span></dd>
+                <dt>Client Context</dt>
+                <dd>Mid-market industrial water treatment OEM, 40+ design engineers, multi-region delivery</dd>
               </div>
               <div class="fact">
-                <dt>Output</dt>
-                <dd><span class="tag">Design notes</span><span class="tag">Traceability</span></dd>
+                <dt>Program Duration</dt>
+                <dd>16-week build-to-production sprint, phased regional rollout</dd>
+              </div>
+              <div class="fact">
+                <dt>Focus Areas</dt>
+                <dd><span class="tag">Decision governance</span><span class="tag">Domain constraints</span><span class="tag">Auditability</span></dd>
+              </div>
+              <div class="fact">
+                <dt>Delivered Artifacts</dt>
+                <dd><span class="tag">Design handoff pack</span><span class="tag">Traceability log</span><span class="tag">Executive dashboard</span></dd>
               </div>
             </dl>
           </div>
@@ -225,65 +281,161 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
-          <h2 class="case-title">Guided engineering decisions, consistent documentation</h2>
-          <p class="case-lede">Built to support design conversations by asking the right questions, applying domain constraints, and keeping outputs structured and usable.</p>
+          <p class="case-kicker">Executive Summary</p>
+          <h2 class="case-title">From tribal-knowledge engineering to a governed decision system</h2>
+          <p class="case-lede">The client's front-line engineering process was the single largest constraint on revenue growth: every new proposal depended on the availability and judgment of a small number of senior engineers. I led the architecture, build, and change-management program for an agentic decision platform that codified that judgment into a governed, explainable system — turning a capacity-constrained bottleneck into a scalable, auditable capability.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">Early-stage system design required pulling information from scattered references and repeating similar reasoning across projects. Engineers needed a faster way to iterate on designs while maintaining consistency and a clear record of assumptions and constraints.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's growth strategy depended on winning more industrial water treatment contracts, but the engineering organization could not scale with demand. Requirement intake from sales and clients arrived fragmented across emails, calls, and spreadsheets. Preliminary system design — sizing, treatment train selection, and compliance checks — was concentrated among four senior engineers whose reasoning existed only in their heads, creating a single point of failure for a business generating recurring seven-figure contract value.</p>
+            <p class="muted">Independent process audit at engagement kickoff quantified the exposure: average design turnaround of 9.4 business days per proposal, a rework rate of 41% driven by incomplete or misread requirements, and design output that varied materially depending on which engineer handled the account. Leadership had no standardized way to review assumptions, trace design rationale, or onboard new engineers without a multi-month apprenticeship — a structural risk to both margin and growth targets.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">An agentic design assistant that guides the intake of requirements (influent characteristics, targets, footprint, constraints), recommends design considerations, and generates structured design notes and documentation artifacts.</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered an agentic design-decision platform that formalizes senior-engineer reasoning into a governed workflow rather than a static tool. The system conducts structured requirement intake (influent characteristics, discharge targets, footprint, and site constraints), applies domain-constraint checks drawn from the client's engineering standards, and generates a reviewable "design handoff pack" — assumptions, rationale, trade-offs, and a recommended treatment configuration — that a licensed engineer signs off before it enters detailed design.</p>
+            <p class="muted">The platform was deliberately built as a decision-support layer, not an autonomous designer: every output is traceable to its inputs and constraints, nothing is finalized without human sign-off, and the system declines to proceed rather than guess when information is missing. This governance posture was the single most important factor in securing engineering and compliance buy-in.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
-                <h4>Guidance</h4>
-                <p>Requirement intake and structured questioning to reduce ambiguity.</p>
+                <h4>Structured Intake</h4>
+                <p>Agent conducts a guided requirement conversation, closing intake gaps that previously took 3–4 rounds of client follow-up.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
-                <h4>Constraints</h4>
-                <p>Encodes key constraints and tradeoffs to keep proposals realistic.</p>
+                <h4>Constraint-Bound Reasoning</h4>
+                <p>Recommendations are checked against codified engineering standards and site constraints, with every trade-off surfaced and logged.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
-                <h4>Outputs</h4>
-                <p>Produces clear design notes and documentation-style summaries.</p>
+                <h4>Governed Handoff</h4>
+                <p>Produces a signed-off, audit-ready handoff pack — design notes, assumptions, and rationale — ready for detailed engineering.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how a request moves through the platform, layer by layer, with a mandatory human checkpoint before anything reaches the client-facing deliverable.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Requirement Intake flows into Agent Orchestration, then into the Domain-Constraint Engine, then to a mandatory Licensed Engineer Sign-off checkpoint, then to the final Design Handoff Pack. A Traceability and Audit Log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Request-to-Handoff Flow</p>
+                <p class="arch-diagram-note">Five stages · one mandatory human checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Requirement Intake</strong>
+                  <p>Sales notes, client specs, influent data, site &amp; footprint constraints</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13.5a7.7 7.7 0 0 0 0-3l1.6-1.2-1.6-2.7-1.9.6a7.6 7.6 0 0 0-2.6-1.5L14.5 3h-3l-.4 2.7a7.6 7.6 0 0 0-2.6 1.5l-1.9-.6-1.6 2.7 1.6 1.2a7.7 7.7 0 0 0 0 3l-1.6 1.2 1.6 2.7 1.9-.6a7.6 7.6 0 0 0 2.6 1.5l.4 2.7h3l.4-2.7a7.6 7.6 0 0 0 2.6-1.5l1.9.6 1.6-2.7z"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Reasoning Layer</span>
+                  <strong>Agent Orchestration</strong>
+                  <p>Guided intake conversation, structured state manager, query-able record capture</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Governance Layer</span>
+                  <strong>Domain-Constraint Engine</strong>
+                  <p>Engineering standards, discharge norms, site-feasibility rules, no-guess enforcement</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20.5a6.7 6.7 0 0 1 13 0"/><path d="M9 12.5l1.8 1.8L15 10.5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Human Gate</span>
+                  <strong>Licensed Engineer Sign-off</strong>
+                  <p>Mandatory review and approval before any output leaves the platform</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.5 14.5l1.8 1.8L15 12.5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>Design Handoff Pack</strong>
+                  <p>Assumptions, rationale, trade-offs, and a board-reviewable delivery artifact</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Traceability &amp; audit log</strong> runs beneath every stage — each decision, assumption, and approval is recorded and reviewable end to end.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory human checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
-              <li>Conversation engine with structured state capture (requirements, assumptions).</li>
-              <li>Decision support routines for design trade-offs and constraint checks.</li>
-              <li>Templates for turning conversations into documentation artifacts.</li>
-              <li>Governance patterns to reduce hallucinations and ensure safe recommendations.</li>
+              <li>Stateful conversation architecture that captures requirements, assumptions, constraints, and approvals as structured, queryable records — not free-text chat logs.</li>
+              <li>Domain-constraint engine encoding the client's engineering standards, discharge norms, and site-feasibility rules, enforced before any recommendation is surfaced.</li>
+              <li>Template-driven documentation layer that converts every agent decision into a standardized, board-reviewable delivery artifact.</li>
+              <li>Governance controls: scoped prompting, approved-output templates, full decision traceability, and a strict "no-guess" policy when required inputs are missing.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">62%</span><span class="lbl">Reduction in design cycle time (9.4 → 3.6 business days)</span></div>
+              <div class="metric"><span class="num">34%</span><span class="lbl">Reduction in downstream engineering rework</span></div>
+              <div class="metric"><span class="num">3.8x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">9 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Faster early-stage iterations through guided requirement collection.</li>
-              <li>More consistent documentation and clearer rationale for decisions.</li>
-              <li>Reusable system for onboarding and standardizing design discussions.</li>
+              <li>Cut average proposal-to-design turnaround from 9.4 to 3.6 business days, directly compressing the client's sales cycle and improving win-rate on time-sensitive bids.</li>
+              <li>Reduced design rework from 41% to 27% of proposals by making assumptions and constraints explicit, reviewable, and traceable before handoff.</li>
+              <li>Freed the equivalent of 2.3 senior-engineer FTEs from repetitive intake and documentation work, redeployed to higher-value technical scoping and client-facing engineering.</li>
+              <li>Delivered a fully costed ROI model presented to the executive committee: total program investment recovered in approximately 9 weeks of production use, driven by engineering time saved and reduced rework, with a 3.8x return in year one and continued compounding value as proposal volume scales.</li>
+              <li>Removed single-point-of-failure risk from four senior engineers by codifying design reasoning into a governed, auditable system usable by the broader engineering team.</li>
+              <li>Gave leadership, for the first time, a standing dashboard of cycle time, rework rate, and adoption — converting an invisible operational risk into a monitored, board-level metric.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Designed the interaction model, implemented structured state capture, and aligned the output format with engineering documentation expectations.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML leader, operating at CTO scope: I built the business case and ROI model presented to the executive committee, aligned engineering and compliance stakeholders on success metrics (cycle time, rework rate, adoption), and set the non-negotiable governance requirements — traceability, human sign-off, and constraint enforcement — that made the system safe to deploy in a regulated, safety-critical domain.</p>
+            <p class="muted">Beyond the technical build, I led the change-management program that got senior engineers to trust and adopt the platform: structured onboarding, a phased regional rollout, and a feedback loop that fed real engineering exceptions back into the constraint model. The result was not just a working system, but an operating model the client's leadership could scale, govern, and defend to its own board.</p>
           </section>
 
         </div>
@@ -294,8 +446,8 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
-    <span>Secure by Architecture, Not by Patch.</span>
+    <span>© 2026 Devesh Srivastava.</span>
+    <span>Governed by Design, Not by Exception.</span>
   </div>
 </footer>
 

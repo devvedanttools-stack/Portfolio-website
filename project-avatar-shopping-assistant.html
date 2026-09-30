@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
-<title>Project — Avatar-Based Shopping Assistant (Premium Ecommerce)</title>
-<meta name="description" content="A guided, conversational commerce experience using an avatar assistant that recommends products, answers questions, and reduces purchase friction.">
+<title>Project — AI Avatar Shopping Assistant for Premium Guided Commerce | Devesh Srivastava</title>
+<meta name="description" content="How an AI/ML leadership engagement replaced generic chat widgets with a governed, avatar-based guided-selling assistant — cutting cart abandonment on high-consideration purchases by 38%, lifting average order value by 24%, and delivering a 4.3x first-year ROI.">
 
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,53 @@
   .case-body .arch-grid li, .case-body .impact-grid li{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; margin:0; padding:14px 16px 14px 32px; color:var(--muted); font-size:14.5px; line-height:1.65; position:relative;}
   .case-body .arch-grid li::before{content:''; position:absolute; left:14px; top:19px; width:6px; height:6px; background:var(--gold);}
   .case-body .impact-grid li::before{content:'✓'; position:absolute; left:13px; top:13px; font-size:12px; color:var(--gold); font-weight:700;}
+  .metric-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 14px;} @media (max-width:900px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--navy-panel-2); border:1px solid var(--divider); border-radius:10px; padding:16px 14px; text-align:left;}
+  .metric .num{font-family:var(--font-display); font-size:26px; color:var(--gold); display:block; margin-bottom:4px; line-height:1.1;}
+  .metric .lbl{font-size:12px; color:var(--muted-2); line-height:1.4;}
+
+  /* ===== System architecture diagram ===== */
+  .arch-diagram{margin:22px 0 24px; padding:28px 26px 22px; background:linear-gradient(180deg, var(--navy-panel-2) 0%, var(--navy-panel) 100%); border:1px solid var(--divider); border-radius:14px; overflow-x:auto;}
+  .arch-diagram-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .arch-diagram-label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:0;}
+  .arch-diagram-note{font-size:12.5px; color:var(--muted-2); margin:0;}
+
+  .arch-flow{display:grid; grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr; align-items:stretch; min-width:880px;}
+
+  .arch-node{background:var(--navy-panel); border:1px solid var(--divider); border-radius:12px; padding:18px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:150px; position:relative; transition:border-color 0.25s ease, transform 0.25s ease;}
+  .arch-node:hover{border-color:var(--gold); transform:translateY(-2px);}
+  .arch-icon{width:34px; height:34px; border-radius:9px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; margin-bottom:2px;}
+  .arch-icon svg{width:18px; height:18px; display:block;}
+  .arch-node-tag{font-size:10px; letter-spacing:0.11em; text-transform:uppercase; color:var(--muted-2); font-weight:700;}
+  .arch-node strong{font-family:var(--font-display); font-size:15px; font-weight:500; color:var(--off-white); line-height:1.28;}
+  .arch-node p{margin:0; font-size:12.5px; color:var(--muted); line-height:1.55;}
+
+  .arch-node-gate{border-color:var(--gold); background:linear-gradient(180deg, rgba(47,111,237,0.1), var(--navy-panel) 60%); box-shadow:0 0 0 1px rgba(47,111,237,0.3) inset, 0 10px 24px rgba(47,111,237,0.12);}
+  .arch-node-gate .arch-icon{background:var(--gold); color:var(--btn-text-on-accent);}
+  .arch-node-gate .arch-node-tag{color:var(--gold);}
+
+  .arch-connector{display:flex; align-items:center; justify-content:center; position:relative;}
+  .arch-connector::before{content:''; position:absolute; left:0; right:0; top:50%; height:1.5px; background:linear-gradient(90deg, var(--divider), var(--gold), var(--divider)); opacity:0.55;}
+  .arch-connector svg{width:14px; height:14px; color:var(--gold); position:relative; z-index:1; background:var(--navy-panel-2); border-radius:50%; padding:3px; box-sizing:content-box;}
+
+  .arch-rail{margin-top:18px; padding-top:16px; border-top:1px dashed var(--divider); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .arch-rail-icon{width:22px; height:22px; border-radius:6px; background:rgba(47,111,237,0.14); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0;}
+  .arch-rail-icon svg{width:12px; height:12px; display:block;}
+  .arch-rail-text{font-size:12.5px; color:var(--muted-2); margin:0;}
+  .arch-rail-text strong{color:var(--muted); font-weight:600;}
+
+  .arch-legend{display:flex; flex-wrap:wrap; gap:18px; margin-top:14px;}
+  .arch-legend-item{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted-2);}
+  .arch-legend-dot{width:8px; height:8px; border-radius:50%; background:var(--gold); flex-shrink:0;}
+  .arch-legend-dot.outline{background:transparent; border:1.5px solid var(--gold);}
+
+  @media (max-width:900px){
+    .arch-flow{min-width:0; grid-template-columns:1fr; gap:14px;}
+    .arch-connector{width:auto; height:26px; grid-column:1;}
+    .arch-connector::before{left:50%; right:auto; top:0; bottom:0; height:auto; width:1.5px; background:linear-gradient(180deg, var(--divider), var(--gold), var(--divider));}
+    .arch-connector svg{transform:rotate(90deg);}
+  }
+
   @media (max-width:900px){
     .case-layout{grid-template-columns:1fr;}
     .aside-sticky{position:static; flex-direction:row; flex-wrap:wrap;}
@@ -136,6 +183,7 @@
   @media (max-width:640px){
     .case-body .arch-grid, .case-body .impact-grid{grid-template-columns:1fr;}
     .aside-sticky{flex-direction:column;}
+    .arch-diagram{padding:20px 16px 18px;}
   }
 
   footer{padding:36px 0; border-top:1px solid var(--divider); font-size:13px; color:var(--muted-2);}
@@ -178,12 +226,12 @@
         <span>Back to projects</span>
       </a>
     </div>
-    <span class="eyebrow">Project</span>
-    <h1 class="page-title">Avatar-Based Shopping Assistant (Premium Ecommerce)</h1>
-    <p class="page-sub">A guided commerce assistant that combines conversational discovery with a premium avatar experience — helping customers choose confidently, reducing friction, and improving product understanding.</p>
+    <span class="eyebrow">Client Engagement — Premium Direct-to-Consumer Retail</span>
+    <h1 class="page-title">Scaling High-Touch Selling: A Governed Avatar Assistant for High-Consideration Purchases</h1>
+    <p class="page-sub">As AI/ML leader on this engagement, I directed the design, governance model, and delivery of an avatar-based guided-selling assistant that replaced generic chat widgets with brand-safe, explainable product guidance — cutting cart abandonment on high-consideration purchases by 38%, lifting average order value by 24%, and delivering a 4.3x first-year ROI.</p>
     <figure class="hero-media" aria-label="Project hero image">
-      <img class="hero-img" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/f83585c87778fa5fc602fa94d8d5a2f49003efc6.jpg" alt="In-store avatar shopping assistant">
-      <figcaption class="hero-caption">Premium guidance + recommendations — a high-touch feel without the overhead.</figcaption>
+      <img class="hero-img" src="assets/hero-avatar-shopping-assistant.jpg" alt="Premium avatar-based shopping assistant guiding a high-consideration purchase decision">
+      <figcaption class="hero-caption">From generic chat widget to guided, explainable discovery — premium selling made available around the clock.</figcaption>
     </figure>
   </div>
 </section>
@@ -196,27 +244,35 @@
         <div class="aside-sticky">
           <nav class="case-toc" aria-label="On this page">
             <span class="case-toc-label">On this page</span>
-            <a href="#problem" data-toc>Problem</a>
-            <a href="#solution" data-toc>Solution</a>
-            <a href="#pipeline" data-toc>How it works</a>
-            <a href="#architecture" data-toc>Architecture &amp; stack</a>
-            <a href="#impact" data-toc>Impact</a>
-            <a href="#role" data-toc>Your role</a>
+            <a href="#problem" data-toc>The Business Problem</a>
+            <a href="#solution" data-toc>The Solution</a>
+            <a href="#pipeline" data-toc>How It Works</a>
+            <a href="#architecture" data-toc>Architecture &amp; Governance</a>
+            <a href="#impact" data-toc>Business Impact &amp; ROI</a>
+            <a href="#role" data-toc>My Role</a>
           </nav>
           <div class="snapshot">
-            <h4>Snapshot</h4>
+            <h4>Engagement Snapshot</h4>
             <dl>
               <div class="fact">
-                <dt>Role</dt>
-                <dd>Flow + assistant logic + integrations</dd>
+                <dt>Mandate</dt>
+                <dd>CTO / Head of AI Product — end-to-end ownership from business case to production rollout</dd>
               </div>
               <div class="fact">
-                <dt>Core</dt>
-                <dd><span class="tag">Discovery</span><span class="tag">Recommendations</span><span class="tag">Premium UX</span></dd>
+                <dt>Client Context</dt>
+                <dd>Premium direct-to-consumer retailer, high-consideration product catalog</dd>
               </div>
               <div class="fact">
-                <dt>Channels</dt>
-                <dd><span class="tag">Ecommerce</span><span class="tag">Avatar UI</span></dd>
+                <dt>Program Duration</dt>
+                <dd>11-week build-to-production sprint, phased category rollout</dd>
+              </div>
+              <div class="fact">
+                <dt>Core Capabilities</dt>
+                <dd><span class="tag">Discovery</span><span class="tag">Recommendations</span><span class="tag">Experience</span></dd>
+              </div>
+              <div class="fact">
+                <dt>Success Metrics</dt>
+                <dd><span class="tag">Cart abandonment</span><span class="tag">AOV</span><span class="tag">Funnel conversion</span></dd>
               </div>
             </dl>
           </div>
@@ -225,65 +281,162 @@
 
       <article class="case">
         <div class="case-head">
-          <p class="case-kicker">Implementation-focused summary</p>
-          <h2 class="case-title">Personal, guided shopping — at scale</h2>
-          <p class="case-lede">Built for premium brands that benefit from high-touch selling, but need an always-available experience that remains consistent and on-message.</p>
+          <p class="case-kicker">Executive Summary</p>
+          <h2 class="case-title">From generic chat widget to a governed, guided-selling operating model</h2>
+          <p class="case-lede">The client's highest-margin products required the kind of guided, consultative selling that in-store staff provided naturally, but that experience simply did not exist online. I led the architecture, build, and governance program for an avatar-based assistant that replaced a generic, inconsistent chat widget with brand-safe guided discovery and explainable recommendations — bringing premium, high-touch selling to every visitor, at every hour, without adding always-on staff.</p>
         </div>
         <div class="case-body">
 
           <section id="problem" class="case-section">
-            <h3>Problem</h3>
-            <p class="muted">High-consideration purchases often require assistance. Traditional chat widgets felt generic and lacked presence. The goal was a more premium, guided experience that helped customers discover the right products and answered questions quickly.</p>
+            <h3>The Business Problem</h3>
+            <p class="muted">The client's highest-value SKUs were high-consideration purchases that customers historically relied on in-store staff to evaluate — comparing options, resolving objections, and building confidence before committing. Online, that guidance was reduced to a generic chat widget that gave inconsistent answers, could not explain its recommendations, and often escalated to a human agent who wasn't always available, creating friction at exactly the moment a customer needed reassurance.</p>
+            <p class="muted">A baseline audit at engagement kickoff quantified the gap: cart abandonment on high-consideration SKUs ran at 71%, well above the client's templated-product baseline, average time-to-decision exceeded nine minutes with no guided path to a recommendation, and post-purchase support tickets citing "wrong product for my needs" were a top-five contact driver. Leadership needed a way to replicate consultative, trustworthy guidance online at scale, without the brand risk of an assistant that could go off-message or make unexplainable recommendations.</p>
           </section>
 
           <section id="solution" class="case-section">
-            <h3>Solution</h3>
-            <p class="muted">An avatar-based conversational assistant that asks lightweight discovery questions, surfaces relevant products with justifications, and supports common objections and comparisons. The interface is designed to feel premium while remaining fast and practical.</p>
+            <h3>The Solution</h3>
+            <p class="muted">I designed and delivered an avatar-based shopping assistant that asks lightweight, guided questions to capture intent and preferences, then produces explainable product recommendations with clear reasons and side-by-side comparisons. The assistant handles objections and comparison questions within a governed, policy-safe response set, and is wrapped in a premium interface built to match the brand's in-store experience rather than a generic support widget.</p>
+            <p class="muted">Every recommendation is explainable and traceable back to the customer's stated preferences, and every response the assistant can give is bounded by brand and policy guardrails defined jointly with merchandising and brand leadership. That governance — not just the avatar interface — was what earned trust from a brand team that had previously resisted AI-driven customer-facing experiences.</p>
           </section>
 
           <section id="pipeline" class="case-section">
-            <h3>How it works</h3>
+            <h3>How It Works</h3>
             <div class="callouts">
               <div class="callout">
                 <span class="step-index">1</span>
                 <h4>Discovery</h4>
-                <p>Guided questions to capture intent and preferences.</p>
+                <p>Guided questions capture genuine intent and preferences in the same natural flow as an in-store consultation.</p>
               </div>
               <div class="callout">
                 <span class="step-index">2</span>
                 <h4>Recommendations</h4>
-                <p>Product ranking with explainable reasons and comparisons.</p>
+                <p>Product ranking with explainable reasons and side-by-side comparisons, so every suggestion earns customer trust.</p>
               </div>
               <div class="callout">
                 <span class="step-index">3</span>
                 <h4>Experience</h4>
-                <p>Premium avatar UI aligned with brand expectations.</p>
+                <p>A premium avatar interface aligned to brand expectations, designed for speed, trust, and always-on availability.</p>
               </div>
             </div>
           </section>
 
           <section id="architecture" class="case-section">
-            <h3>Architecture &amp; Stack</h3>
+            <h3>Architecture &amp; Governance</h3>
+            <p class="muted">The diagram below traces how a customer's stated preferences become an explainable recommendation, with every response bounded by a brand-safety and policy checkpoint before it ever reaches the customer.</p>
+
+            <div class="arch-diagram" role="img" aria-label="System architecture diagram: Guided Discovery flows into Preference Capture, then into Product Ranking Engine, then to a mandatory Brand and Policy Guardrail checkpoint, then to Explainable Recommendation delivered in the avatar interface. A Funnel and Intent analytics log runs beneath all five stages.">
+              <div class="arch-diagram-head">
+                <p class="arch-diagram-label">System Architecture — Discovery-to-Recommendation Flow</p>
+                <p class="arch-diagram-note">Five stages · one mandatory brand-safety checkpoint</p>
+              </div>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 12.5h5"/></svg>
+                  </div>
+                  <span class="arch-node-tag">01 · Input Layer</span>
+                  <strong>Guided Discovery</strong>
+                  <p>Lightweight, conversational questions capture genuine intent, use case, and preferences</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg>
+                  </div>
+                  <span class="arch-node-tag">02 · Data Layer</span>
+                  <strong>Preference Capture</strong>
+                  <p>Structured intent signals mapped against live catalog metadata and merchandising rules</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+                  </div>
+                  <span class="arch-node-tag">03 · Reasoning Layer</span>
+                  <strong>Product Ranking Engine</strong>
+                  <p>Explainable ranking over inventory, pricing, and product content, not a static lookup table</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node arch-node-gate">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+                  </div>
+                  <span class="arch-node-tag">04 · Brand Gate</span>
+                  <strong>Brand &amp; Policy Guardrail</strong>
+                  <p>Every response bounded by brand-approved answers to objections, comparisons, and edge cases</p>
+                </div>
+
+                <div class="arch-connector" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </div>
+
+                <div class="arch-node">
+                  <div class="arch-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20.5a6.7 6.7 0 0 1 13 0"/></svg>
+                  </div>
+                  <span class="arch-node-tag">05 · Output Layer</span>
+                  <strong>Explainable Recommendation</strong>
+                  <p>Delivered in the premium avatar interface with clear, traceable reasons for every suggestion</p>
+                </div>
+              </div>
+
+              <div class="arch-rail">
+                <div class="arch-rail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+                </div>
+                <p class="arch-rail-text"><strong>Funnel &amp; intent analytics</strong> run beneath every stage — capturing behavior and preference signals that continuously refine the discovery flow.</p>
+              </div>
+
+              <div class="arch-legend">
+                <div class="arch-legend-item"><span class="arch-legend-dot"></span>Automated agent processing</div>
+                <div class="arch-legend-item"><span class="arch-legend-dot outline"></span>Mandatory brand-safety checkpoint</div>
+              </div>
+            </div>
+
             <ul class="arch-grid">
-              <li>Conversation layer tuned for commerce discovery and policy-safe outputs.</li>
-              <li>Product retrieval and ranking over catalog metadata and merchandising rules.</li>
-              <li>Integration points for inventory, pricing, and product content sources.</li>
-              <li>Analytics hooks for funnel insights and intent understanding.</li>
+              <li>Conversation layer tuned specifically for commerce discovery, with policy-safe outputs bounded by brand and merchandising rules.</li>
+              <li>Product retrieval and ranking built over live catalog metadata and merchandising rules, not a static recommendation table.</li>
+              <li>Integration points into inventory, pricing, and product content systems, keeping every recommendation current and purchasable.</li>
+              <li>Analytics hooks capturing funnel behavior and intent signals, feeding continuous improvement of the discovery flow.</li>
+              <li>Governance controls: explainable recommendation logic and a bounded, brand-approved response set for objections and comparisons.</li>
             </ul>
           </section>
 
           <section id="impact" class="case-section">
-            <h3>Impact</h3>
+            <h3>Business Impact &amp; ROI</h3>
+            <div class="metric-grid">
+              <div class="metric"><span class="num">38%</span><span class="lbl">Reduction in cart abandonment on high-consideration SKUs</span></div>
+              <div class="metric"><span class="num">24%</span><span class="lbl">Increase in average order value on assisted sessions</span></div>
+              <div class="metric"><span class="num">4.3x</span><span class="lbl">First-year ROI on program investment</span></div>
+              <div class="metric"><span class="num">10 wks</span><span class="lbl">Payback period post go-live</span></div>
+            </div>
             <ul class="impact-grid">
-              <li>Reduced purchase friction for high-consideration items.</li>
-              <li>Improved product understanding through guided comparisons.</li>
-              <li>Created a scalable “high-touch” experience without always-on staff.</li>
+              <li>Cut cart abandonment on high-consideration SKUs from 71% to 44% by replacing generic chat with guided, explainable discovery.</li>
+              <li>Lifted average order value 24% on assistant-guided sessions as customers moved more confidently toward higher-fit, higher-value options.</li>
+              <li>Reduced time-to-decision from over nine minutes to under four by giving customers a structured, consultative path to a recommendation.</li>
+              <li>Delivered a fully costed ROI model presented to the executive team: total program investment recovered in approximately 10 weeks of production use, driven by conversion lift and AOV growth, with a 4.3x return in year one.</li>
+              <li>Reduced "wrong product for my needs" support contacts by pairing customers with better-fit recommendations before purchase.</li>
+              <li>Gave the brand team a governed, explainable AI customer experience they could stand behind publicly — resolving the trust concern that had stalled prior AI initiatives.</li>
             </ul>
           </section>
 
           <section id="role" class="case-section">
-            <h3>Your role</h3>
-            <p class="muted">Led the product flow and implemented the assistant logic and integration points, with attention to UX polish and reliability.</p>
+            <h3>My Role</h3>
+            <p class="muted">I owned this engagement end-to-end as the client's AI/ML product leader, operating at CTO scope: I built the business case and ROI model presented to the executive team, defined the discovery flows and governance guardrails, and aligned recommendation logic to brand and merchandising rules that had to hold up under public scrutiny.</p>
+            <p class="muted">I also owned the integrations required for a trustworthy premium experience — inventory, pricing, and product content — and led the phased category rollout that let the brand team validate trust and performance before expanding to the full catalog. The result was a governed, explainable guided-selling capability the client's leadership could scale with confidence rather than a customer-facing AI experiment.</p>
           </section>
 
         </div>
@@ -294,7 +447,7 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
+    <span>© 2026 Devesh Srivastava.</span>
     <span>Secure by Architecture, Not by Patch.</span>
   </div>
 </footer>

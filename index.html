@@ -704,9 +704,36 @@
   form.contact-form button:hover{background:var(--gold-bright); border-color:var(--gold-bright); transform:translateY(-1px); box-shadow:0 10px 22px rgba(47,111,237,0.22);}
   .form-note{font-size:12.5px; color:var(--muted-2); margin-top:2px;}
 
-  footer{
-    padding:36px 0; border-top:1px solid var(--divider);
-    font-size:13px; color:var(--muted-2); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  footer.site-footer{
+    padding:56px 0;
+    border-top:1px solid var(--divider);
+    background:linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.10) 100%);
+    color:var(--muted-2);
+  }
+  html[data-theme="light"] footer.site-footer{
+    background:linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(15,24,38,0.04) 100%);
+  }
+  .footer-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:26px; align-items:start;}
+  .footer-brand{min-width:0;}
+  .footer-mark{font-family:var(--font-display); font-size:18px; letter-spacing:0.01em; color:var(--off-white); display:inline-flex; align-items:baseline; gap:2px;}
+  .footer-mark span{color:var(--gold);}
+  .footer-tagline{margin:10px 0 0; color:var(--muted); max-width:64ch; font-size:13.5px; line-height:1.6;}
+
+  .footer-links{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px 18px; justify-items:start;}
+  .footer-links a{font-size:13.5px; color:var(--muted); padding:6px 0; border-bottom:1px solid transparent; transition:color 0.2s ease, border-color 0.2s ease;}
+  .footer-links a:hover, .footer-links a:focus-visible{color:var(--off-white); border-bottom-color:var(--divider);}
+
+  .footer-meta{margin-top:28px; padding-top:18px; border-top:1px solid var(--divider); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12.5px; color:var(--muted-2);}
+  .footer-meta a{color:inherit; border-bottom:1px solid transparent;}
+  .footer-meta a:hover, .footer-meta a:focus-visible{color:var(--off-white); border-bottom-color:var(--divider);}
+
+  @media (max-width:820px){
+    .footer-inner{grid-template-columns:1fr;}
+    .footer-links{grid-template-columns:repeat(3, minmax(0,1fr));}
+  }
+  @media (max-width:560px){
+    footer.site-footer{padding:44px 0;}
+    .footer-links{grid-template-columns:repeat(2, minmax(0,1fr));}
   }
 
 </style>
@@ -1164,11 +1191,11 @@
       </div>
       <div class="sk-group">
         <h4>Infrastructure &amp; Engineering</h4>
-        <p>AI Infrastructure (NVIDIA, Cisco UCS X-Series) · Cloud AI Workloads (AWS, Azure) · ML Ops · Data Engineering · AI Solution Architecture</p>
+        <p>AI Infrastructure (NVIDIA, Cisco UCS X-Series) · Cloud AI Workloads (AWS, Azure) · MLOps &amp; Reliability · Data Engineering · Platform Architecture</p>
       </div>
       <div class="sk-group">
         <h4>Leadership &amp; Strategy</h4>
-        <p>Executive &amp; CXO Advisory · Enterprise AI Adoption Strategy · GTM &amp; Pre-Sales Strategy · Technical Team Building &amp; Mentoring · Data Science Leadership · Patents &amp; AI Innovation · Smart City / IoT AI Applications · Account Management</p>
+        <p>Executive &amp; Board Advisory · Enterprise AI Operating Model · AI Product &amp; Platform Strategy · Risk &amp; Governance · GTM &amp; Pre-Sales Leadership · Technical Team Building &amp; Mentoring · Patents &amp; AI Innovation · Account Leadership</p>
       </div>
     </div>
   </div>
@@ -1178,9 +1205,74 @@
 <section class="band" id="projects">
   <div class="wrap fade-up">
     <span class="eyebrow">09 — Projects</span>
-    <h2 class="projects-heading">Selected work.</h2>
-    <p class="projects-sub">Representative healthcare AI/ML work, framed through governance, auditability, and infrastructure that is secure by architecture.</p>
+    <h2 class="projects-heading">AI products, platforms, and operating systems.</h2>
+    <p class="projects-sub">Executive-grade examples of how I shape AI into scalable business capabilities — product strategy, architecture, governance, and rollout discipline. Built to earn trust from CxOs, security leaders, and operators.</p>
     <div class="projects-grid">
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Retail Intelligence</span>
+          <span class="project-tag">Governed AI</span>
+        </div>
+        <h3 class="project-title">TeamShield: Intelligence Layer for Cumberland Farms</h3>
+        <p class="project-desc">A governed intelligence layer that connects POS, loyalty, fuel, field, and analytics into decision-ready signals — improving data quality, foodservice optimization, loyalty activation, and executive decision velocity.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./teamshield-cumberland-farms-executive.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">AI Operating System</span>
+          <span class="project-tag">Multi-Site Analytics</span>
+        </div>
+        <h3 class="project-title">WashIQ: AI Operating System for Express Car Washes (Micrologic)</h3>
+        <p class="project-desc">An executive-grade AI platform thesis for multi-site operations: unify telemetry, predict outcomes, optimize revenue levers, and create a governed operating model that scales across locations.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./washiq-micrologic-platform-executive.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Voice AI</span>
+          <span class="project-tag">Operations</span>
+        </div>
+        <h3 class="project-title">Bradham: AI Front Counter Platform (Auto Repair)</h3>
+        <p class="project-desc">An executive-ready front-counter operating model: AI receptionist + AI service advisor that reduces missed-call exposure, improves response speed, and recovers declined work with governed workflows.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./bradham-ai-front-counter-executive.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Benchmarking SaaS</span>
+          <span class="project-tag">AI Platform</span>
+        </div>
+        <h3 class="project-title">Analysis Lab: Restaurant Intelligence &amp; Benchmarking Platform</h3>
+        <p class="project-desc">A platform thesis that turns fragmented POS/payroll data into an investor-grade benchmarking standard — with reports, AI coaching, predictive scores, and a comp-set network effect.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./analysis-lab-restaurant-intelligence-executive.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="sk-group project-card">
+        <div class="project-meta">
+          <span class="project-tag">Edge AI</span>
+          <span class="project-tag">Retail Ops</span>
+        </div>
+        <h3 class="project-title">AI Drive-Through Control Platform (Multi-Store Retail)</h3>
+        <p class="project-desc">An edge-first control platform that standardizes drive-through performance across stores — improving lane time, order accuracy, and operational visibility with measurable ROI.</p>
+        <div class="project-actions">
+          <a class="btn-primary" href="./ai-drive-through-control-executive.html">Open project</a>
+          <a class="link-secondary" href="#contact">Ask about this</a>
+        </div>
+      </div>
 
       <div class="sk-group project-card">
         <div class="project-meta">
@@ -1188,7 +1280,7 @@
           <span class="project-tag">Agentic AI</span>
         </div>
         <h3 class="project-title">Intent-Driven AI Sales Automation Platform</h3>
-        <p class="project-desc">An end-to-end pipeline that detects buying intent in public social content, enriches contacts, pushes clean leads to CRM, and drafts outreach for human review — designed for repeatability and attribution.</p>
+        <p class="project-desc">A controllable, measurable operating system for revenue teams: intent signals → enrichment → CRM readiness → human-reviewed outreach, with governance, attribution, and repeatability designed in from day one.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-sales-automation.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1201,7 +1293,7 @@
           <span class="project-tag">RAG</span>
         </div>
         <h3 class="project-title">Agentic AI Technical Sales Consultant (Web)</h3>
-        <p class="project-desc">A domain-aware website agent that guides buyers through process selection, materials, constraints, and RFQ capture — behaving like a technical sales engineer, not a generic chatbot.</p>
+        <p class="project-desc">A web-based “digital sales desk” that converts engineering knowledge into guided decisions (materials, constraints, process fit) and structured RFQs — designed for predictable conversion and compliance.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-manufacturing-sales-consultant.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1214,7 +1306,7 @@
           <span class="project-tag">Search</span>
         </div>
         <h3 class="project-title">Voice-Powered Media Intelligence Search</h3>
-        <p class="project-desc">A voice-first platform that makes internal product images and training videos instantly discoverable via natural-language queries, replacing manual folder navigation with ranked, previewable results.</p>
+        <p class="project-desc">A discoverability layer for enterprise knowledge: voice-first retrieval across images and video, ranked results with previews, and an adoption-ready UX that replaces manual navigation at scale.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-voice-media-search.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1227,7 +1319,7 @@
           <span class="project-tag">Data Pipeline</span>
         </div>
         <h3 class="project-title">Automated Procurement Intelligence (No-API Suppliers)</h3>
-        <p class="project-desc">An AI-augmented scraping + extraction pipeline that keeps product and expiry data current across supplier sites without APIs, normalizing outputs into analysis-ready files and alerts.</p>
+        <p class="project-desc">A resilient intelligence pipeline for procurement: continuously normalizes supplier data without APIs, publishes analysis-ready outputs, and drives alerts and decisions with auditable traceability.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-procurement-intelligence.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1240,7 +1332,7 @@
           <span class="project-tag">GenAI</span>
         </div>
         <h3 class="project-title">AI Product Personalization Engine (Creator Commerce)</h3>
-        <p class="project-desc">A prompt-to-design personalization engine that generates print-ready artwork, previews it on products, and produces production-safe assets — enabling open-ended customization without linear design headcount.</p>
+        <p class="project-desc">A production-grade personalization engine that turns prompts into print-safe assets with previews and guardrails — enabling scalable customization without sacrificing brand control or operational quality.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-ai-personalization.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1253,7 +1345,7 @@
           <span class="project-tag">Data Intelligence</span>
         </div>
         <h3 class="project-title">AI Chemical Intelligence Platform (Research &amp; Procurement)</h3>
-        <p class="project-desc">An AI-driven platform that automates collection, parsing, and normalization of compound and supplier data into a single analysis-ready dataset, reducing manual research and improving decision speed.</p>
+        <p class="project-desc">A decision-support platform that turns fragmented compound/supplier information into one trusted dataset — improving research velocity, procurement confidence, and governance over data quality.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-ai-chemical-intelligence.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1266,7 +1358,7 @@
           <span class="project-tag">Agentic AI</span>
         </div>
         <h3 class="project-title">Agentic System Design Chatbot (Industrial Water Treatment)</h3>
-        <p class="project-desc">A catalog-aware chatbot that diagnoses problems, designs treatment systems, and recommends compatible products across a 20k+ SKU taxonomy — with end-to-end analytics from chat to revenue.</p>
+        <p class="project-desc">An agentic assistant that translates customer inputs into engineered system recommendations across a 20k+ SKU catalog — with governance, analytics, and revenue attribution designed for leadership visibility.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-agentic-system-design.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1279,7 +1371,7 @@
           <span class="project-tag">Voice</span>
         </div>
         <h3 class="project-title">Avatar-Based Shopping Assistant (Premium Ecommerce)</h3>
-        <p class="project-desc">A voice + chat assistant with a lifelike video avatar front-end, connected to product search and tool-based reasoning to guide discovery and purchasing in a distinctive, on-brand experience.</p>
+        <p class="project-desc">A premium, on-brand agent experience: voice + chat + avatar UI connected to product search and tool-based reasoning, designed to drive conversion while maintaining guardrails and compliance.</p>
         <div class="project-actions">
           <a class="btn-primary" href="./project-avatar-shopping-assistant.html">Open project</a>
           <a class="link-secondary" href="#contact">Ask about this</a>
@@ -1328,10 +1420,29 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
-    <span>© 2026 Devesh S.</span>
-    <span>Secure by Architecture, Not by Patch.</span>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-mark" href="#top" aria-label="Back to top">Devesh S<span>.</span></a>
+        <p class="footer-tagline">Secure by Architecture, Not by Patch — building AI systems and healthcare infrastructure leaders can trust.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#featured">Featured</a>
+        <a href="#projects">Projects</a>
+        <a href="#framework">Research &amp; Frameworks</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#contact">Contact</a>
+        <a href="#top">Back to top</a>
+      </nav>
+    </div>
+
+    <div class="footer-meta" aria-label="Footer meta">
+      <span>© 2026 Devesh S.</span>
+      <span><a href="#contact">Get in touch</a> • <a href="#top">Top</a></span>
+    </div>
   </div>
 </footer>
 
